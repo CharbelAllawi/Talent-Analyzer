@@ -4,7 +4,25 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
+    spacing: {
+      '10': '1.5rem',
+      '20': '5rem',
+      '50': '45rem',
+    },
+    fontFamily: {
+      display: ["Inter"],
+    },
+    backgroundImage: {
+      'custom-gradient': 'linear-gradient(260deg, #393973 21.62%, #6C6CD9 95.41%)',
+    },
+    colors: {
+      'custom-purple': '#333366',
+      'white': '#ffffff',
+
+    },
   },
   plugins: [],
 }
