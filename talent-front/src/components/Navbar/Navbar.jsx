@@ -5,6 +5,7 @@ import "./style.css";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [selectedNavItem, setSelectedNavItem] = useState(null); // State to track the selected navbar item
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -21,6 +22,10 @@ function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handleNavItemClick = (item) => {
+    setSelectedNavItem(item);
+  };
 
   const renderLogo = () => (
     <div className={`pr-5 ${isMobile ? 'block md:hidden' : 'hidden md:block'}`}>
@@ -45,25 +50,26 @@ function Navbar() {
     )
   );
 
-
   const renderMobileMenu = () => (
     isMobile && showMenu && (
-
-      <div className="bg-custom-purple w-full opacity-70">
-        <ul className="text-white py-2">
-          <li className={`mb-2 pb-10 pt-10 pl-10  bg-custom-purple ${isMobile ? 'nav-link' : ''}`}>
-            <a href="#" className="nav-link">Home</a>
+      <div className="mobile-menu text-white">
+        <ul>
+          <li>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Home' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Home')}>Home</a>
           </li>
-          <li className={`mb-2 pb-10 pl-10 bg-custom-purple ${isMobile ? 'nav-link' : ''}`}>
-            <a href="#" className="nav-link">How it works</a>
+          <li>
+            <a href="#" className={`nav-link ${selectedNavItem === 'How it works' ? 'selected' : ''}`} onClick={() => handleNavItemClick('How it works')}>How it works</a>
           </li>
-          <li className={`mb-2 pb-10 pl-10 bg-custom-purple ${isMobile ? 'nav-link' : ''}`}>
-            <a href="#" className="nav-link">Account</a>
+          <li>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Account' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Account')}>Account</a>
           </li>
-          <li className={`mb-2 pb-10 pl-10 bg-custom-purple ${isMobile ? 'nav-link' : ''}`}>
-            <a href="#" className="nav-link">Contact</a>
+          <li>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Contact' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Contact')}>Contact</a>
           </li>
         </ul>
+        <div className='closemenu'>
+          <button onClick={toggleMenu}>X</button>
+        </div>
       </div>
     )
   );
@@ -73,20 +79,22 @@ function Navbar() {
       {renderLogo()}
       {renderBurgerButton()}
       {renderMobileMenu()}
-      <ul className="flex flex-col md:flex-row  justify-between text-white md:flex text-lg font-bold">
-        <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-          <a href="#" className="nav-link">Home</a>
-        </li>
-        <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
-          <a href="#" className="nav-link">How it works</a>
-        </li>
-        <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
-          <a href="#" className="nav-link">Account</a>
-        </li>
-        <li className={`mb-2 md:mb-0 ${isMobile ? 'mr-20' : 'mr-20'}`}>
-          <a href="#" className="nav-link">Contact</a>
-        </li>
-      </ul>
+      {isMobile ? null : (
+        <ul className="flex flex-col md:flex-row  justify-between text-white md:flex text-lg font-bold">
+          <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Home' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Home')}>Home</a>
+          </li>
+          <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
+            <a href="#" className={`nav-link ${selectedNavItem === 'How it works' ? 'selected' : ''}`} onClick={() => handleNavItemClick('How it works')}>How it works</a>
+          </li>
+          <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Account' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Account')}>Account</a>
+          </li>
+          <li className={`mb-2 md:mb-0 ${isMobile ? 'mr-20' : 'mr-20'}`}>
+            <a href="#" className={`nav-link ${selectedNavItem === 'Contact' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Contact')}>Contact</a>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

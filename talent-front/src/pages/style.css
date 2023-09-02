@@ -1,0 +1,35 @@
+.full-width-image {
+  width: 100vw;
+  height: auto;
+}
+
+.hero-text {
+  position: relative;
+  font-size: 6rem;
+
+  top: 22%;
+}
+
+.hero-text-2 {
+  position: relative;
+
+  font-size: 5rem;
+  margin-left: 13%;
+  top: 22%;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 1rem;
+    margin-left: -50%;
+    margin-top: -20%;
+
+  }
+
+  .hero-text-2 {
+    font-size: 1rem;
+    margin-top: -0%;
+    margin-left: -39%;
+
+  }
+}

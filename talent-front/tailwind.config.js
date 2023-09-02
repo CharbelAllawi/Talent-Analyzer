@@ -10,7 +10,9 @@ module.exports = {
     spacing: {
       '10': '1.5rem',
       '20': '5rem',
-      '50': '45rem',
+      '22': '15rem',
+      '23': '10.5rem',
+      '50': '80rem',
     },
     fontFamily: {
       display: ["Inter"],
