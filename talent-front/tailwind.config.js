@@ -8,8 +8,11 @@ module.exports = {
 
     },
     spacing: {
+      '5': '0.5rem',
       '10': '1.5rem',
+      '12': '2.3rem',
       '20': '5rem',
+      '21': '5.9rem',
       '22': '15rem',
       '23': '10.5rem',
       '50': '80rem',
@@ -22,7 +25,10 @@ module.exports = {
     },
     colors: {
       'custom-purple': '#333366',
+      'custom-blue': '#2596be',
+      'custom-grey': '#F5F5F5',
       'white': '#ffffff',
+      'black': '#000000'
 
     },
   },
