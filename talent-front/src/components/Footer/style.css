@@ -1,5 +1,4 @@
 .pg-footer {
-  margin-top: 40%;
   font-family: 'Inter', sans-serif;
 }
 
@@ -7,6 +6,7 @@
 .footer {
   background-image: linear-gradient(260deg, #393973 21.62%, #6C6CD9 95.41%);
   color: #fff;
+
 }
 
 .footer-wave-svg {

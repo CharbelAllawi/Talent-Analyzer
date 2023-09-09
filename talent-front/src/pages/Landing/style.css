@@ -87,6 +87,7 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
   color: black;
+  margin-bottom: 35%;
 }
 
 .arrow {
@@ -121,6 +122,7 @@
   min-height: 300px;
   margin-top: 13%;
   margin-left: 30%;
+
 }
 
 .wrapper-3 {
@@ -152,6 +154,7 @@
   background-color: #6C6CD9;
   font-size: 16px;
   font-family: "Inter";
+
 }
 
 .items,
@@ -163,6 +166,7 @@
 .items p {
   max-height: 100px;
   overflow: hidden;
+
 }
 
 .pic {
@@ -177,12 +181,14 @@
 }
 
 .pic img {
-  max-width: 100%
+  max-width: 100%;
+  margin-top: 0.1rem;
+
 }
 
 .name {
-  color: #F18701;
-  font-weight: bold;
+  color: #02101fde;
+  font-weight: bolder;
 }
 
 .items:after {
@@ -201,6 +207,7 @@
 .itemsfixed {
   transform: translateY(0%) scale(1);
   opacity: 1;
+
 }
 
 

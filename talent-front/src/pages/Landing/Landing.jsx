@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import herovideo from '../assets/herovideo.mp4';
-import whyus from '../assets/whyus.mp4';
-import google from '../assets/google.png';
-import amazon from '../assets/amazon.png';
-import mercedes from '../assets/mercedes.png';
-import murex from '../assets/murex.png';
-import facebook from '../assets/facebook.png';
-import apple from '../assets/apple.png';
+import herovideo from '../../assets/herovideo.mp4';
+import whyus from '../../assets/whyus.mp4';
+import google from '../../assets/google.png';
+import amazon from '../../assets/amazon.png';
+import mercedes from '../../assets/mercedes.png';
+import murex from '../../assets/murex.png';
+import facebook from '../../assets/facebook.png';
+import apple from '../../assets/apple.png';
 
 
 import "./style.css"

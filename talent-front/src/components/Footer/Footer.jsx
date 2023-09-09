@@ -1,5 +1,6 @@
 import React from 'react'
 import "./style.css"
+import logo from '../../assets/navlogo.svg'
 function Footer() {
   return (
     <div class="pg-footer">
@@ -11,8 +12,8 @@ function Footer() {
           <div class="footer-content-column">
             <div class="footer-logo">
               <a class="footer-logo-link" href="#">
-                <span class="hidden-link-text">LOGO</span>
-                <h1>LOGO</h1>
+                <span class="hidden-link-text"></span>
+                <img src={logo}></img>
               </a>
             </div>
             <div class="footer-menu">
