@@ -59,6 +59,7 @@ function VideoUpload() {
           <img src={upload} alt='upload'></img>
         </div>
         <p>Browser File to upload</p>
+        <p className='text-xs'>File Type: MP4</p>
       </form>
 
       {showProgress && (

@@ -48,6 +48,7 @@ function Options() {
     { value: "criticalThinking", label: "Critical Thinking" },
     { value: "creativity", label: "Creativity" }
   ];
+
   return (
     <>
       <div className='hcontainer'>
@@ -69,7 +70,6 @@ function Options() {
             isRtl={false}
             menuIsOpen={true}
             placeholder="Select the job position."
-
           />
         </div>
 

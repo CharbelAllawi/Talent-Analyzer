@@ -40,7 +40,6 @@ const CandidateProfile = () => {
           <input
             type="date"
             name="dateOfBirth"
-
             value={selectedDate}
             onChange={handleDateChange}
             required
