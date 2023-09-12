@@ -12,13 +12,19 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function candidates()
+    {
+        // return $this->hasMany(Candidate::class, 'user_id');
+
+        return $this->hasMany('App\Candidate');
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
     ];
