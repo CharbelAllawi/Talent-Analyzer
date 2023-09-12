@@ -17,7 +17,7 @@ class UploadFileController extends Controller
         $video = $request->file('file');
         $videoName = Str::random(10) . '.mp3';
 
-        $originalname = $video->getClientOriginalName(); 
+        $originalname = $video->getClientOriginalName();
         $originalname = Str::replaceLast('.mp4', '_', $originalname);
         $video->storeAs('uploads',  $originalname . $videoName, 'public');
 

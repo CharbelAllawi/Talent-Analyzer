@@ -12,8 +12,7 @@ function VideoUpload() {
     fileInputRef.current.click();
   };
 
-  const uploadFile = (event) => {
-    const file = event.target.files[0];
+  const uploadFile = (file) => {
     if (!file || uploadedFile) return;
 
     const filename =
@@ -41,11 +40,21 @@ function VideoUpload() {
     setUploadedFile(null);
   };
 
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    uploadFile(file);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className='upload-box'>
+    <div className='upload-box' onDrop={handleDrop} onDragOver={handleDragOver}>
       <p>Upload Your Interview</p>
       <form>
-        <input className='file-input' type='file' name='file' hidden ref={fileInputRef} onChange={uploadFile}></input>
+        <input className='file-input' type='file' name='file' hidden ref={fileInputRef} onChange={(e) => uploadFile(e.target.files[0])}></input>
         <div className='icon' onClick={handleFileInputClick}>
           <img src={upload} alt='upload'></img>
         </div>
@@ -75,7 +84,7 @@ function VideoUpload() {
                 <span className='size'>{uploadedFile.size}</span>
               </div>
             </div>
-            <i className='fas fa-times' onClick={handleDelete} style={{ color: 'white', 'marginLeft': '45rem', 'position': 'absolute  ' }}></i>
+            <i className='fas fa-times' onClick={handleDelete} style={{ color: 'white', 'marginLeft': '45rem', 'position': 'absolute' }}></i>
           </li>
         </section>
       )}
