@@ -1,6 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css'
+
 const CandidateProfile = () => {
+  const [selectedDate, setSelectedDate] = useState('');
+  const handleDateChange = (e) => {
+    const date = e.target.value;
+    setSelectedDate(date);
+    console.log(date);
+  };
   useEffect(() => {
     const rangeChange = (e) => {
       e.currentTarget.nextElementSibling.firstElementChild.textContent = e.currentTarget.value;
@@ -8,6 +15,7 @@ const CandidateProfile = () => {
 
     const ranges = document.querySelectorAll(".jsRange input");
     ranges.forEach((range) => {
+
       range.nextElementSibling.firstElementChild.textContent = range.value;
       range.addEventListener("input", rangeChange);
     });
@@ -28,19 +36,20 @@ const CandidateProfile = () => {
           <input type="text" name="Full Name" placeholder="John Doe" required /><br />
         </label>
         <label>
-          Age<br />
+          Date of Birth<br />
           <input
-            placeholder="Age"
-            type="number"
-            name="age"
-            min="1" max="200" step="1"
+            type="date"
+            name="dateOfBirth"
+
+            value={selectedDate}
+            onChange={handleDateChange}
+            required
           /><br />
         </label>
         <label >
           Email<br />
           <input type="email" name="email" placeholder="johndoe@example.com" required /><br />
         </label>
-
 
         <label >
           Profile Picture<br />
