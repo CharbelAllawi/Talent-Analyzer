@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
 import './style.css';
 import log1 from '../../assets/account-log1.svg'
 import log2 from '../../assets/account-log2.svg'
@@ -7,6 +9,8 @@ import { requestMethods } from "../../core/enums/requestMethods";
 import { localStorageAction } from "../../core/config/localstorage";
 import Navbar from '../../components/Navbar/Navbar';
 function Account() {
+
+  const navigation = useNavigate();
 
   const [isSignUpMode, setIsSignUpMode] = useState(false);
   const [loginCredentials, setLoginCredentials] = useState({
@@ -47,7 +51,8 @@ function Account() {
       });
 
       localStorageAction('token', response.authorisation.token);
-      // navigation("/landing");
+
+      navigation("/");
     } catch (error) {
       console.log(error);
       // setError(error.message);
