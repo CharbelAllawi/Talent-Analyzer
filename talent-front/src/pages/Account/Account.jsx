@@ -50,9 +50,10 @@ function Account() {
         body: loginCredentials,
       });
 
-      localStorageAction('token', response.authorisation.token);
+      localStorage.setItem("token", response.authorisation.token);
+      console.log(localStorage.getItem('token'))
 
-      navigation("/");
+      // navigation("/");
     } catch (error) {
       console.log(error);
       // setError(error.message);
@@ -69,7 +70,6 @@ function Account() {
       });
 
       localStorageAction('token', response.authorisation.token);
-      console.log(response)
       // navigation("/landing");
     } catch (error) {
       console.log(error);
