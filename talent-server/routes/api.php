@@ -24,6 +24,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 });
 Route::get('/read-text-file', [FileController::class, 'readTextFile']);
+Route::post('/write-text-file', [FileController::class, 'writeTextFile']);
 
 Route::post('/upload-file', [UploadFileController::class, 'uploadFile']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

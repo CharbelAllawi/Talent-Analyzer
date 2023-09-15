@@ -22,8 +22,10 @@ class FileController extends Controller
     {
         $filePath = storage_path('app/public/text/candidate.txt');
         $text = $request->input('text');
+        $existingContent = file_get_contents($filePath);
+        $updatedText =  $text . PHP_EOL . $existingContent;
 
-        if (file_put_contents($filePath, $text) !== false) {
+        if (file_put_contents($filePath, $updatedText) !== false) {
             return response()->json(['message' => 'File updated successfully']);
         } else {
             return response()->json(['message' => 'Failed to write to the file'], 500);
