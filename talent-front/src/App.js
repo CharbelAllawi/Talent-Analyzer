@@ -7,6 +7,7 @@ import Account from './pages/Account/Account';
 import Options from './pages/Select/Select';
 import CandidateProfile from './pages/CandidateProfile/CandidateProfile';
 import Result from './pages/Result/Result';
+import MyCandidates from './pages/MyCandidates/MyCandidates';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/select' element={<Options />}></Route>
           <Route path='/candidateprofile' element={<CandidateProfile />}></Route>
           <Route path='/result' element={<Result />}></Route>
+          <Route path='/mycandidates' element={<MyCandidates />}></Route>
 
         </Routes>
         <Footer />
