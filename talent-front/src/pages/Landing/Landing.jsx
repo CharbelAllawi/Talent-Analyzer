@@ -7,6 +7,7 @@ import mercedes from '../../assets/mercedes.png';
 import murex from '../../assets/murex.png';
 import facebook from '../../assets/facebook.png';
 import apple from '../../assets/apple.png';
+import {  useNavigate } from 'react-router-dom';
 
 
 import "./style.css"
@@ -15,7 +16,18 @@ import Navbar from '../../components/Navbar/Navbar';
 
 
 function Landing() {
+  const navigation = useNavigate();
+
   const typedTextRef = useRef(null);
+  const handlestartbtn = () => {
+    if (localStorage.getItem('token') != '') {
+      navigation('/upload')
+    }
+    else {
+      navigation('/account')
+
+    }
+  }
   useEffect(() => {
     const wrapper = document.querySelector('.wrapper');
     const items = Array.from(document.querySelectorAll('.items'));
@@ -90,7 +102,7 @@ function Landing() {
               <h1 className="hireword">Hiring</h1>
               <span className='autoword' ref={typedTextRef}></span>
               <div className="startcontainer">
-                <button class="startbtn">Start Now</button>
+                <button class="startbtn" onClick={handlestartbtn}>Start Now</button>
               </div>
             </div>
           </div>
