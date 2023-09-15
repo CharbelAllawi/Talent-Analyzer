@@ -53,7 +53,7 @@ function Account() {
       localStorage.setItem("token", response.authorisation.token);
       console.log(localStorage.getItem('token'))
 
-      // navigation("/");
+      navigation("/");
     } catch (error) {
       console.log(error);
       // setError(error.message);
@@ -70,7 +70,7 @@ function Account() {
       });
 
       localStorageAction('token', response.authorisation.token);
-      // navigation("/landing");
+      navigation("/landing");
     } catch (error) {
       console.log(error);
     }
