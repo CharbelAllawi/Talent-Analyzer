@@ -4,7 +4,9 @@ import makeAnimated from "react-select/animated";
 import './style.css';
 import Navbar from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
-
+import { sendRequest } from "../../core/config/request";
+import { requestMethods } from "../../core/enums/requestMethods";
+import { localStorageAction } from "../../core/config/localstorage";
 function Options() {
   const animatedComponents = makeAnimated();
   const [selectedOptions, setSelectedOptions] = useState([
@@ -20,7 +22,33 @@ function Options() {
     setIsButtonVisible(!!item);
     console.log(item);
   };
-  const handlenextbtn = () => {
+  const handlenextbtn = async () => {
+
+    let text = "Job position is: " + selectedOptions['value'];
+    if (selectedOptions2.length !== 0) {
+      text += "\nSoft skills are: ";
+      for (let i = 0; i < selectedOptions2.length; i++) {
+        text += selectedOptions2[i]['value'];
+        if (i !== selectedOptions2.length - 1) {
+          text += ", ";
+        } else {
+          text += "\n";
+        }
+      }
+    }
+
+    try {
+      const response = await sendRequest({
+        method: requestMethods.POST,
+        route: '/write-text-file',
+        body: { 'text': text },
+      });
+      console.log(response)
+      navigation("/");
+    } catch (error) {
+      console.log(error);
+      // setError(error.message);
+    }
     navigation('/candidateprofile')
   };
   const handleSelectSecondMenu = (selectedItems2) => {
