@@ -26,6 +26,24 @@
   animation: borderAnimation 4s linear infinite;
 }
 
+.finishairesult {
+  background-color: rgb(37 150 190);
+  color: white;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.75rem;
+  margin-top: 10rem;
+  margin-left: 10rem;
+
+  position: absolute;
+}
+
+.finishcontainer {
+  margin-top: 15rem;
+}
+
 @keyframes borderAnimation {
   0% {
     transform: rotate(0deg);
