@@ -61,7 +61,7 @@ section .row {
   position: absolute;
   z-index: 10000000000;
 
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   width: 49rem;
   margin-bottom: 10px;
   background: #7979F2;
@@ -172,4 +172,21 @@ section .details span {
 
 .delete-button {
   color: white;
+}
+
+.nextvideocontainer {
+  margin-left: 350px;
+}
+
+.nextbuttonvideo {
+  background-color: rgb(37 150 190);
+  color: white;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.75rem;
+  margin-left: 40%;
+  margin-top: 6rem;
+  position: absolute;
 }
