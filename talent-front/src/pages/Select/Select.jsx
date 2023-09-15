@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import './style.css';
+import Navbar from '../../components/Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function Options() {
   const animatedComponents = makeAnimated();
@@ -12,11 +14,14 @@ function Options() {
 
   ]);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
-
+  const navigation = useNavigate();
   const handleSelect = (item) => {
     setSelectedOptions(item);
     setIsButtonVisible(!!item);
     console.log(item);
+  };
+  const handlenextbtn = () => {
+    navigation('/candidateprofile')
   };
   const handleSelectSecondMenu = (selectedItems2) => {
     console.log(selectedItems2.length)
@@ -51,6 +56,7 @@ function Options() {
 
   return (
     <>
+      <Navbar selecteditem="Add Candidate" />
       <div className='hcontainer'>
         <h1>What are you looking for in your candidate?</h1>
       </div>
@@ -75,7 +81,7 @@ function Options() {
 
         {isButtonVisible && (
           <span className="nextcontainer">
-            <button className="nextbutton">Next</button>
+            <button className="nextbutton" onClick={handlenextbtn}>Next</button>
           </span>
         )}
 
