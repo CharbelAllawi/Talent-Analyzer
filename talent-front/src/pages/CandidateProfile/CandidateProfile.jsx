@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './style.css'
+import Navbar from '../../components/Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const CandidateProfile = () => {
   const [selectedDate, setSelectedDate] = useState('');
+  const navigation = useNavigate();
+
   const handleDateChange = (e) => {
     const date = e.target.value;
     setSelectedDate(date);
     console.log(date);
   };
+  const handlecreatebtn = () => {
+    navigation('/result')
+  }
   useEffect(() => {
     const rangeChange = (e) => {
       e.currentTarget.nextElementSibling.firstElementChild.textContent = e.currentTarget.value;
@@ -28,37 +35,40 @@ const CandidateProfile = () => {
   }, []);
 
   return (
-    <form action="#" method="post" id="signup">
-      <h1>Candidate Profile</h1>
-      <fieldset className='fieldset'>
-        <label>
-          Full Name<br />
-          <input type="text" name="Full Name" placeholder="John Doe" required /><br />
-        </label>
-        <label>
-          Date of Birth<br />
-          <input
-            type="date"
-            name="dateOfBirth"
-            value={selectedDate}
-            onChange={handleDateChange}
-            required
-          /><br />
-        </label>
-        <label >
-          Email<br />
-          <input type="email" name="email" placeholder="johndoe@example.com" required /><br />
-        </label>
+    <>
+      <Navbar selecteditem='Add Candidate' />
+      <form action="#" method="post" id="signup">
+        <h1>Candidate Profile</h1>
+        <fieldset className='fieldset'>
+          <label>
+            Full Name<br />
+            <input type="text" name="Full Name" placeholder="John Doe" required /><br />
+          </label>
+          <label>
+            Date of Birth<br />
+            <input
+              type="date"
+              name="dateOfBirth"
+              value={selectedDate}
+              onChange={handleDateChange}
+              required
+            /><br />
+          </label>
+          <label >
+            Email<br />
+            <input type="email" name="email" placeholder="johndoe@example.com" required /><br />
+          </label>
 
-        <label >
-          Profile Picture<br />
-          <input type="file" name="profilePicture" /><br />
-        </label>
-      </fieldset>
-      <footer>
-        <button type="submit">Create</button>
-      </footer>
-    </form>
+          <label >
+            Profile Picture<br />
+            <input type="file" name="profilePicture" /><br />
+          </label>
+        </fieldset>
+        <footer>
+          <button type="submit" onClick={handlecreatebtn}>Create</button>
+        </footer>
+      </form>
+    </>
   );
 };
 
