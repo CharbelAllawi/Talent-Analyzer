@@ -18,5 +18,15 @@ class FileController extends Controller
         }
     }
 
-    
+    public function writeTextFile(Request $request)
+    {
+        $filePath = storage_path('app/public/text/candidate.txt');
+        $text = $request->input('text');
+
+        if (file_put_contents($filePath, $text) !== false) {
+            return response()->json(['message' => 'File updated successfully']);
+        } else {
+            return response()->json(['message' => 'Failed to write to the file'], 500);
+        }
+    }
 }
