@@ -29,6 +29,7 @@ Route::post('/write-text-file', [FileController::class, 'writeTextFile']);
 Route::post('/addcandidate', [CandidateController::class, 'addcandidate']);
 
 Route::post('/upload-file', [UploadFileController::class, 'uploadFile']);
+Route::post('/get-result', [CandidateController::class, 'getResult']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
