@@ -8,6 +8,7 @@ import Options from './pages/Select/Select';
 import CandidateProfile from './pages/CandidateProfile/CandidateProfile';
 import Result from './pages/Result/Result';
 import MyCandidates from './pages/MyCandidates/MyCandidates';
+import Loading from './pages/Loading/Loading';
 
 function App() {
   return (
@@ -17,14 +18,15 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Landing />}></Route>
-          <Route path='/upload' element={<VideoUpload />}></Route>
+          <Route path='/upload/:id' element={<VideoUpload />}></Route>
           <Route path='/account' element={<Account />}></Route>
-          <Route path='/select' element={<Options />}></Route>
-          <Route path='/candidateprofile' element={<CandidateProfile />}></Route>
-          <Route path='/result' element={<Result />}></Route>
+          <Route path='/select/:id' element={<Options />}></Route>
+          <Route path='/candidateprofile' element={<CandidateProfile />} />
+          <Route path='/result/:id' element={<Result />}></Route>
           <Route path='/mycandidates' element={<MyCandidates />}></Route>
+          <Route path='/loading' element={<Loading />}></Route>
         </Routes>
-        <Footer />
+
 
       </BrowserRouter>
     </div>
