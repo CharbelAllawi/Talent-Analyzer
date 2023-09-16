@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Candidate extends Model
 {
     use HasFactory;
-    public function user()
-    {
-        // return $this->belongsTo(User::class, 'user_id');
-        return $this->belongsTo('App\User');
-    }
+    public $timestamps = false;
+
+    protected $fillable = ['full_name', 'date_of_birth', 'email', 'phone', 'image_url', 'position'];
+
+
     public function answers()
     {
         return $this->hasMany('App\Answer');
