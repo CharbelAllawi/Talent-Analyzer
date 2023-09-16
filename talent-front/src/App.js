@@ -14,6 +14,7 @@ function App() {
     <div className='font-display'>
       <BrowserRouter >
 
+
         <Routes>
           <Route path='/' element={<Landing />}></Route>
           <Route path='/upload' element={<VideoUpload />}></Route>
@@ -22,9 +23,9 @@ function App() {
           <Route path='/candidateprofile' element={<CandidateProfile />}></Route>
           <Route path='/result' element={<Result />}></Route>
           <Route path='/mycandidates' element={<MyCandidates />}></Route>
-
         </Routes>
         <Footer />
+
       </BrowserRouter>
     </div>
 
