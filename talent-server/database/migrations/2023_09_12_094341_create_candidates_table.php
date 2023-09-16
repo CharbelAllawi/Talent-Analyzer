@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->string('email')->unique();
             $table->string('image_url');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('phone');
+            $table->string('position');
         });
     }
 
