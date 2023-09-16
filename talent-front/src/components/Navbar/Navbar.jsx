@@ -110,7 +110,7 @@ function Navbar(selecteditem) {
                 <a href="/mycandidates" className={`nav-link ${selectedNavItem === 'My Candidates' ? 'selected' : ''}`} onClick={() => handleNavItemClick('My Candidates')}>My Candidates</a>
               </li>
               <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/upload" className={`nav-link ${selectedNavItem === 'Add Candidate' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Add Candidate')}>Add Candidate</a>
+                <a href="/candidateprofile" className={`nav-link ${selectedNavItem === 'Add Candidate' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Add Candidate')}>Add Candidate</a>
               </li>
 
 
