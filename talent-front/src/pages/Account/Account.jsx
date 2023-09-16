@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './style.css';
 import log1 from '../../assets/account-log1.svg'
@@ -56,7 +56,6 @@ function Account() {
       navigation("/");
     } catch (error) {
       console.log(error);
-      // setError(error.message);
     }
   };
   const signupHandler = async (e) => {
@@ -70,7 +69,7 @@ function Account() {
       });
 
       localStorageAction('token', response.authorisation.token);
-      navigation("/landing");
+      navigation("/");
     } catch (error) {
       console.log(error);
     }
