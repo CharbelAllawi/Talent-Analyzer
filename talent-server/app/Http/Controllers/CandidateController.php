@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Candidate;
+use App\Models\Result;
 use App\Models\UserCandidate;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,14 @@ class CandidateController extends Controller
         ]);
 
         $candidate->save();
+        $candidateid = $candidate->id;
+        return response()->json(['candidate_id' =>   $candidateid]);
+    }
+    public function getResult(Request $request)
+    {
+        $candidateId = $request->candidate_id;
 
-        return back()->with('success', 'Candidate added successfully.');
+        $result = Result::where('candidate_id', $candidateId)->get();
+        return response()->json(['result' =>   $result]);
     }
 }
