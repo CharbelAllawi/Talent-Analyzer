@@ -7,12 +7,13 @@ import mercedes from '../../assets/mercedes.png';
 import murex from '../../assets/murex.png';
 import facebook from '../../assets/facebook.png';
 import apple from '../../assets/apple.png';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 import "./style.css"
 import Typed from 'typed.js';
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 
 function Landing() {
@@ -21,7 +22,7 @@ function Landing() {
   const typedTextRef = useRef(null);
   const handlestartbtn = () => {
     if (localStorage.getItem('token') != '') {
-      navigation('/upload')
+      navigation('/candidateprofile')
     }
     else {
       navigation('/account')
@@ -211,6 +212,7 @@ function Landing() {
         </div>
 
       </div >
+      <Footer />
     </>
 
 
