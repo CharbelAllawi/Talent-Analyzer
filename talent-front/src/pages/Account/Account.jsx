@@ -8,6 +8,7 @@ import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
 import { localStorageAction } from "../../core/config/localstorage";
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 function Account() {
 
   const navigation = useNavigate();
@@ -176,7 +177,7 @@ function Account() {
           </div>
         </div>
       </div>
-
+      <Footer />
     </>
 
   );
