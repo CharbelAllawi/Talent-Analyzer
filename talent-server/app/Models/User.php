@@ -12,7 +12,10 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
     public $timestamps = false;
-
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_candidates');
+    }
     /**
      * The attributes that are mass assignable.
      *
