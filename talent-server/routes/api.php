@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\UploadFileController;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 Route::get('/read-text-file', [FileController::class, 'readTextFile']);
 Route::post('/write-text-file', [FileController::class, 'writeTextFile']);
+Route::post('/addcandidate', [CandidateController::class, 'addcandidate']);
 
 Route::post('/upload-file', [UploadFileController::class, 'uploadFile']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
