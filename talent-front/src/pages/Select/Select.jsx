@@ -6,12 +6,17 @@ import Navbar from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
+import { useParams } from 'react-router-dom';
+
 import { localStorageAction } from "../../core/config/localstorage";
+import Footer from '../../components/Footer/Footer';
 function Options() {
   const animatedComponents = makeAnimated();
   const [selectedOptions, setSelectedOptions] = useState([
 
   ]);
+  const { id } = useParams();
+
   const [selectedOptions2, setSelectedOptions2] = useState([
 
   ]);
@@ -36,20 +41,19 @@ function Options() {
         }
       }
     }
-
+    navigation('/loading')
     try {
       const response = await sendRequest({
         method: requestMethods.POST,
         route: '/write-text-file',
         body: { 'text': text },
       });
-      console.log(response)
-      navigation("/");
+
+      navigation('/result/' + id)
+
     } catch (error) {
       console.log(error);
-      // setError(error.message);
     }
-    navigation('/candidateprofile')
   };
   const handleSelectSecondMenu = (selectedItems2) => {
     console.log(selectedItems2.length)
@@ -132,6 +136,7 @@ function Options() {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
