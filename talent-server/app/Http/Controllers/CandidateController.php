@@ -97,4 +97,9 @@ class CandidateController extends Controller
 
         return $candidates;
     }
+
+    public function testapi()
+    {
+        return response()->json(['Hi' => 'Welcome to AWS']);
+    }
 }

@@ -33,6 +33,8 @@ Route::post('/get-result', [CandidateController::class, 'getResult']);
 Route::get('/get-candidates', [CandidateController::class, 'getcandidates']);
 Route::post('/compare', [CompareController::class, 'compare']);
 Route::post('/uncompare', [CompareController::class, 'uncompare']);
+Route::get('/test', [CandidateController::class, 'testapi']);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
