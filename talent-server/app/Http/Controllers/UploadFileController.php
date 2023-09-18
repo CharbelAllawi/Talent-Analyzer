@@ -6,11 +6,14 @@ use App\Models\UserCandidate;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UploadFileController extends Controller
 {
     public function uploadFile(Request $request)
     {
+        $user = Auth::user();
+        $user_id = $user->id;
         $request->validate([
             'file' => 'required|mimes:mp4'
         ]);
@@ -28,7 +31,7 @@ class UploadFileController extends Controller
         exec("ffmpeg -i $outputPath -vn -acodec mp3 -ab 192k -y $audioPath");
         $user_candidate = new UserCandidate([
             'user_id' => $user_id,
-            'candidate_id' => $candidate_id
+            'candidate_id' => $request->candidate_id
         ]);
         $user_candidate->save();
         return response()->json([
