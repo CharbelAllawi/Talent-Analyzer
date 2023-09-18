@@ -9,6 +9,7 @@ import CandidateProfile from './pages/CandidateProfile/CandidateProfile';
 import Result from './pages/Result/Result';
 import MyCandidates from './pages/MyCandidates/MyCandidates';
 import Loading from './pages/Loading/Loading';
+import CompareCandidate from './pages/CompareCandidate/CompareCandidate';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path='/result/:id' element={<Result />}></Route>
           <Route path='/mycandidates' element={<MyCandidates />}></Route>
           <Route path='/loading' element={<Loading />}></Route>
+          <Route path='/comparecandidates' element={<CompareCandidate />}></Route>
+
         </Routes>
 
 
