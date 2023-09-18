@@ -11,4 +11,5 @@ class UserCandidate extends Model
     public $timestamps = false;
     protected $table = 'user_candidates';
     protected $fillable = ['user_id', 'candidate_id'];
+    
 }
