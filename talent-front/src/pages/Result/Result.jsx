@@ -16,7 +16,6 @@ const Result = ({ content }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("id is " + id)
 
     const fetchData = async () => {
       try {
