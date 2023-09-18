@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidate_id');
-            $table->string('result');
+            $table->longText('result');
             $table->foreign('candidate_id')->references('id')->on('candidates');
         });
     }
