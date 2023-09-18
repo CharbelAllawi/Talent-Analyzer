@@ -53,16 +53,16 @@ const CandidateProfile = () => {
   ]);
   const navigation = useNavigate();
   const options = [
-    { value: "software_engineer", label: "Software Engineer" },
-    { value: "network_administrator", label: "Network Administrator" },
-    { value: "data_scientist", label: "Data Scientist" },
-    { value: "cyber_security_analyst", label: "Cyber Security Analyst" },
-    { value: "system_administrator", label: "System Administrator" },
-    { value: "web_developer", label: "Web Developer" },
-    { value: "database_administrator", label: "Database Administrator" },
-    { value: "business_analyst", label: "Business Analyst" },
-    { value: "cloud_architect", label: "Cloud Architect" },
-    { value: "UI_UX_designer", label: "UI/UX Designer" },
+    { value: "Software Engineer", label: "Software Engineer" },
+    { value: "Network Administrator", label: "Network Administrator" },
+    { value: "Data Scientist", label: "Data Scientist" },
+    { value: "Cyber Security Analyst", label: "Cyber Security Analyst" },
+    { value: "System Administrator", label: "System Administrator" },
+    { value: "Web Developer", label: "Web Developer" },
+    { value: "Database Administrator", label: "Database Administrator" },
+    { value: "Business Analyst", label: "Business Analyst" },
+    { value: "Cloud Architect", label: "Cloud Architect" },
+    { value: "UI/UX Designer", label: "UI/UX Designer" },
   ];
   const handleDateChange = (e) => {
     const date = e.target.value;
@@ -78,13 +78,41 @@ const CandidateProfile = () => {
     const { name, value, type } = e.target;
 
     if (type === 'file') {
-      const formData = new FormData();
-      formData.append(name, e.target.files[0]);
+      const file = e.target.files[0];
 
-      setCandidateProfile({
-        ...candidateprofile,
-        [name]: e.target.files[0],
-      });
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = async (event) => {
+          const image = new Image();
+          image.src = event.target.result;
+
+          image.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = 300;
+            canvas.height = 225;
+
+            ctx.drawImage(image, 0, 0, 300, 225);
+
+            canvas.toBlob((blob) => {
+              const resizedImageFile = new File([blob], file.name, {
+                type: file.type,
+              });
+
+              setCandidateProfile({
+                ...candidateprofile,
+                [name]: resizedImageFile,
+              });
+
+              const resizedImageUrl = URL.createObjectURL(resizedImageFile);
+              setImagePreview(resizedImageUrl);
+            }, file.type);
+          };
+        };
+
+        reader.readAsDataURL(file);
+      }
     } else {
       setCandidateProfile({
         ...candidateprofile,
@@ -92,6 +120,7 @@ const CandidateProfile = () => {
       });
     }
   };
+
   const handlecreatebtn = async (e) => {
     e.preventDefault();
 
