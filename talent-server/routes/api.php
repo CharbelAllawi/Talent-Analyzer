@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\CompareController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\UploadFileController;
 use Illuminate\Http\Request;
@@ -27,9 +28,13 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/read-text-file', [FileController::class, 'readTextFile']);
 Route::post('/write-text-file', [FileController::class, 'writeTextFile']);
 Route::post('/addcandidate', [CandidateController::class, 'addcandidate']);
-
 Route::post('/upload-file', [UploadFileController::class, 'uploadFile']);
 Route::post('/get-result', [CandidateController::class, 'getResult']);
+Route::get('/get-candidates', [CandidateController::class, 'getcandidates']);
+Route::post('/compare', [CompareController::class, 'compare']);
+Route::post('/uncompare', [CompareController::class, 'uncompare']);
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
