@@ -62,28 +62,28 @@ function Options() {
     }
   };
   const options = [
-    { value: "software_engineer", label: "Software Engineer" },
-    { value: "network_administrator", label: "Network Administrator" },
-    { value: "data_scientist", label: "Data Scientist" },
-    { value: "cyber_security_analyst", label: "Cyber Security Analyst" },
-    { value: "system_administrator", label: "System Administrator" },
-    { value: "web_developer", label: "Web Developer" },
-    { value: "database_administrator", label: "Database Administrator" },
-    { value: "business_analyst", label: "Business Analyst" },
-    { value: "cloud_architect", label: "Cloud Architect" },
-    { value: "UI_UX_designer", label: "UI/UX Designer" },
+    { value: "Software Engineer", label: "Software Engineer" },
+    { value: "Network Administrator", label: "Network Administrator" },
+    { value: "Data Scientist", label: "Data Scientist" },
+    { value: "Cyber Security Analyst", label: "Cyber Security Analyst" },
+    { value: "System Administrator", label: "System Administrator" },
+    { value: "Web Developer", label: "Web Developer" },
+    { value: "Database Administrator", label: "Database Administrator" },
+    { value: "Business Analyst", label: "Business Analyst" },
+    { value: "Cloud Architect", label: "Cloud Architect" },
+    { value: "UI/UX Designer", label: "UI/UX Designer" },
   ];
   const options2 = [
-    { value: "communication", label: "Communication" },
-    { value: "teamwork", label: "Teamwork" },
-    { value: "problemSolving", label: "Problem Solving" },
-    { value: "adaptability", label: "Adaptability" },
-    { value: "timeManagement", label: "Time Management" },
-    { value: "leadership", label: "Leadership" },
-    { value: "emotionalIntelligence", label: "Emotional Intelligence" },
-    { value: "conflictResolution", label: "Conflict Resolution" },
-    { value: "criticalThinking", label: "Critical Thinking" },
-    { value: "creativity", label: "Creativity" }
+    { value: "Communication", label: "Communication" },
+    { value: "Teamwork", label: "Teamwork" },
+    { value: "Problem Solving", label: "Problem Solving" },
+    { value: "Adaptability", label: "Adaptability" },
+    { value: "Time Management", label: "Time Management" },
+    { value: "Leadership", label: "Leadership" },
+    { value: "Emotional Intelligence", label: "Emotional Intelligence" },
+    { value: "Conflict Resolution", label: "Conflict Resolution" },
+    { value: "Critical Thinking", label: "Critical Thinking" },
+    { value: "Creativity", label: "Creativity" }
   ];
 
   return (
