@@ -113,7 +113,9 @@ function Navbar(selecteditem) {
                 <a href="/candidateprofile" className={`nav-link ${selectedNavItem === 'Add Candidate' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Add Candidate')}>Add Candidate</a>
               </li>
 
-
+              <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
+                <a href="/comparecandidates" className={`nav-link ${selectedNavItem === 'Compare' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Commpare')}>Compare</a>
+              </li>
 
               <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
                 <a href="/account" className={`nav-link ${selectedNavItem === 'Login' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Sign Out')}>Sign Out</a>
