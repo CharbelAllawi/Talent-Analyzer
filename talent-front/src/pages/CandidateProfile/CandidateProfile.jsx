@@ -90,10 +90,10 @@ const CandidateProfile = () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
-            canvas.width = 300;
-            canvas.height = 225;
+            canvas.width = 600;
+            canvas.height = 350;
 
-            ctx.drawImage(image, 0, 0, 300, 225);
+            ctx.drawImage(image, 0, 0, 600, 350);
 
             canvas.toBlob((blob) => {
               const resizedImageFile = new File([blob], file.name, {
@@ -176,8 +176,8 @@ const CandidateProfile = () => {
           <Navbar selecteditem='Add Candidate' />
           <form action="#" method="post" id="signup">
             <span className='flex'>
+              <i className="fas fa-user" style={{ fontSize: '40px', marginRight: '20px' }}></i>
               <h1>Candidate Profile</h1>
-              <i className="fas fa-user" style={{ fontSize: '40px', marginLeft: '20px' }}></i>
             </span>
 
             <fieldset className='fieldset'>
