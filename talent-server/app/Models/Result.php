@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Result extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable = ['candidate_id', 'result', 'percentage'];
 
     public function candidate()
     {
