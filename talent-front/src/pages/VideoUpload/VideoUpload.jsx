@@ -31,12 +31,12 @@ function VideoUpload() {
       navigation('/loading');
 
       const formData = new FormData();
-      formData.append('file', uploadedFile);
-      formData.append('candidate_id', id);
+      formData.append('video', uploadedFile);
+      formData.append('id', id);
 
       const response = await sendRequest({
         method: requestMethods.POST,
-        route: '/upload-file',
+        route: '/transcribe',
         body: formData
       });
 
