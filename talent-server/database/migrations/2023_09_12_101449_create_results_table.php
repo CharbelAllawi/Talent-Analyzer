@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('candidate_id');
             $table->longText('result');
+            $table->text('percentage');
             $table->foreign('candidate_id')->references('id')->on('candidates');
         });
     }
