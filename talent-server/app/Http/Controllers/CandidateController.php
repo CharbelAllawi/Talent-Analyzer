@@ -98,8 +98,22 @@ class CandidateController extends Controller
         return $candidates;
     }
 
-    public function testapi()
+    public function updatecandidate(Request $request)
     {
-        return response()->json(['Hi' => 'Welcome to AWS']);
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'date_of_birth' => 'required|date',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
+            'position' => 'required|string|max:255',
+        ]);
+        $candidate = Candidate::findOrFail($request->id);
+        $candidate->full_name = $request->input('full_name');
+        $candidate->date_of_birth = $request->input('date_of_birth');
+        $candidate->email = $request->input('email');
+        $candidate->phone = $request->input('phone');
+        $candidate->position = $request->input('position');
+        $candidate->save();
+        return response()->json(['message' => 'Candidate updated successfully'], 200);
     }
 }
