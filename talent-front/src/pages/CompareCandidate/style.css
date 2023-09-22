@@ -1,0 +1,14 @@
+.comparebutton {
+  background-color: rgb(37 150 190);
+  color: white;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.75rem;
+  margin-left: 85%;
+  position: absolute;
+  margin-top: 5%;
+
+}
+
