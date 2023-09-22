@@ -1,0 +1,74 @@
+.admin-table {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.profile-image-container {
+  width: 200px;
+  height: 200px;
+  margin-top: 10%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.adminbtn {
+  padding: 10px 15px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.adminbtn:hover {
+  background-color: #0056b3;
+}
+
+.mcontainer {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  font-size: 30px;
+  padding-top: 5%;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
