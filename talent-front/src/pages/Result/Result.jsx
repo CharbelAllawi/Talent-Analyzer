@@ -24,10 +24,9 @@ const Result = ({ content }) => {
           route: '/get-result',
           body: { 'candidate_id': id }
         });
+        console.log(response)
         setText(response.result[0]['result']);
         setLoading(false);
-        console.log(response)
-        console.log(id)
         navigation('/result/' + id);
       } catch (error) {
         console.log(error);
@@ -48,7 +47,7 @@ const Result = ({ content }) => {
         <Loading />
       ) : (
         <>
-          <Navbar selecteditem='Add Candidate' />
+          <Navbar />
           <div className='hcontainer'>
             <h1>AI Result</h1>
           </div>
