@@ -10,6 +10,7 @@ import Result from './pages/Result/Result';
 import MyCandidates from './pages/MyCandidates/MyCandidates';
 import Loading from './pages/Loading/Loading';
 import CompareCandidate from './pages/CompareCandidate/CompareCandidate';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Landing />}></Route>
+          <Route path='/:id' element={<Landing />}></Route>
+
           <Route path='/upload/:id' element={<VideoUpload />}></Route>
           <Route path='/account' element={<Account />}></Route>
           <Route path='/select/:id' element={<Options />}></Route>
@@ -27,6 +30,7 @@ function App() {
           <Route path='/mycandidates' element={<MyCandidates />}></Route>
           <Route path='/loading' element={<Loading />}></Route>
           <Route path='/comparecandidates' element={<CompareCandidate />}></Route>
+          <Route path='/admin' element={<Admin />}></Route>
 
         </Routes>
 
