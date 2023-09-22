@@ -210,9 +210,9 @@ function Landing() {
           </div >
 
         </div>
+        <Footer />
 
       </div >
-      <Footer />
     </>
 
 
