@@ -20,7 +20,7 @@ class FileController extends Controller
 
     public function writeTextFile(Request $request)
     {
-        $filePath = storage_path('app/public/text/candidate.txt');
+        $filePath = storage_path('app/public/candidatestext/' . $request->id . '.txt');
         $text = $request->input('text');
         $existingContent = file_get_contents($filePath);
         $updatedText =  $text . PHP_EOL . $existingContent;
