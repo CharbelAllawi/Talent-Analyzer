@@ -28,8 +28,8 @@ function Options() {
     console.log(item);
   };
   const handlenextbtn = async () => {
-
-    let text = "Job position is: " + selectedOptions['value'];
+    let text = "i want you analyze the interview while taking into consideration the job position and soft skills required by recruiter\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is only 5 lines maximum and the percentage should be between 1 and 100 based on candidate performance.\nThe JSON object should be in this format {percentage :   , result:}"
+    text += "\nJob position is: " + selectedOptions['value'];
     if (selectedOptions2.length !== 0) {
       text += "\nSoft skills are: ";
       for (let i = 0; i < selectedOptions2.length; i++) {
@@ -46,10 +46,20 @@ function Options() {
       const response = await sendRequest({
         method: requestMethods.POST,
         route: '/write-text-file',
-        body: { 'text': text },
+        body: { 'text': text, 'id': id },
       });
+      try {
+        const response = await sendRequest({
+          method: requestMethods.POST,
+          route: '/openai',
+          body: { 'id': id },
+        });
 
-      navigation('/result/' + id)
+        navigation('/result/' + id)
+
+      } catch (error) {
+        console.log(error);
+      }
 
     } catch (error) {
       console.log(error);
@@ -112,8 +122,8 @@ function Options() {
         </div>
 
         {isButtonVisible && (
-          <span className="nextcontainer">
-            <button className="nextbutton" onClick={handlenextbtn}>Next</button>
+          <span className="comparecontainer">
+            <button className="comparebutton" onClick={handlenextbtn}>Next</button>
           </span>
         )}
 
