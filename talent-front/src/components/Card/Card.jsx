@@ -1,76 +1,151 @@
-import React, { useState } from 'react';
-import './style.css';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Compare from '../Compare/Compare';
+import Compare from '.././../components/Compare/Compare';
+import './style.css'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+  IconButton,
+} from "@material-tailwind/react";
 
-const Card = ({ id, fullName, position, imageUrl, dob, phone, email, iscompared, comparepage }) => {
-  const [isShowing, setIsShowing] = useState(false);
-  const [zIndex, setZIndex] = useState(10);
+export function CandidateCard({ id, fullName, position, imageUrl, dob, phone, email, iscompared, comparepage, onDelete, }) {
+  const [editing, setEditing] = useState(false);
+  const [editedInfo, setEditedInfo] = useState({
+    fullName: fullName,
+    position: position,
+    email: email,
+    dob: dob,
+    phone: phone,
+  });
+
+  const handleEdit = () => {
+    setEditing(true);
+  };
+
+  const handleSave = () => {
+    setEditing(false);
+  };
+  const handleDelete = () => {
+    onDelete(id);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditedInfo({ ...editedInfo, [name]: value });
+  };
+
+  const resetCompare = () => {
+  };
+
   const navigation = useNavigate();
 
+  const handleresultclick = (e) => {
+    navigation('/result/' + id);
+  };
 
-
-
-  const handlEyeClick = (e) => {
-    navigation('/result/' + id)
-  }
   return (
-    <>
-      <div
-        className={`card ${isShowing ? 'show' : ''}`}
-        style={{ zIndex }}
+    <Card className="w-full max-w-[26rem] shadow-lg">
+      <CardHeader floated={false} color="blue-gray">
+        <img
+          src={"http://localhost:8000/storage/candidatesprofile/" + imageUrl}
+        />
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+        {editing ? (
+          <>
+            <IconButton
 
-      >
-        <div className="card__image-holder">
-          <img className="card__image" src={"http://localhost:8000/storage/candidatesprofile/" + imageUrl} alt={fullName} />
-        </div>
-        <div className="card-title">
-          <div className="button-container">
-            {comparepage === false && (
-              <>
-                <button className="icon-button addition-button">
-                  <Compare iscompared={iscompared} candidate_id={id} />
-                </button>
+              color="green"
+              className="!absolute top-4 right-4 rounded-full pr-14 "
+              onClick={handleSave}
+            >
+              Save
+            </IconButton>
 
-                <button className="icon-button show-more-button">
-                  <i className="fas fa-eye" onClick={handlEyeClick} style={{ color: '#9c9cd5', fontSize: '24px' }}></i>
-                </button>
-              </>
+          </>
+        ) : (
+          <>
+            <IconButton
+
+              color="red"
+              className="!absolute top-4 right-20  rounded-full pr-14 "
+
+              onClick={handleDelete}
+            >
+              Delete
+            </IconButton>
+            <IconButton
+
+              color="blue"
+
+              className="!absolute top-4 right-4 rounded-full pr-14 "
+              onClick={handleEdit}
+            >
+              Edit
+            </IconButton>
+          </>
+
+        )}
+      </CardHeader>
+
+      <CardBody>
+        <div className="mb-3 flex items-center justify-betweenn">
+          {editing ? (
+            <>
+              <input
+                type="text"
+                name="fullName"
+                value={editedInfo.fullName}
+                onChange={handleChange}
+                className="input-fieldcard"
+
+              />
+              <input
+                type="text"
+                name="position"
+                value={editedInfo.position}
+                onChange={handleChange}
+                className="input-fieldcard"
+              />
+            </>
+          ) : (
+            <Typography variant="h5" color="blue-gray" className="font-medium">
+              {editedInfo.fullName}, {editedInfo.position}
+            </Typography>
+          )}
+          <Typography
+            color="blue-gray"
+            className="flex items-center gap-1.5 font-normal"
+          >
+            {!editing && comparepage === false && (
+              <Compare iscompared={iscompared} candidate_id={id} />
             )}
-          </div>
-          {comparepage === false && (
-            <h2>
-              {fullName}
-              <small>{position}</small>
-            </h2>
-          )}
-          {comparepage === true && (
-            <h2 style={{ marginTop: '0rem' }}>
-              {fullName}
-              <small>{position}</small>
-            </h2>
-          )}
+          </Typography>
         </div>
-        <div className="card-flap flap1">
-          <div className="card-description">
-            <ul className='uldesc'>
-              <li>Email : {email}</li>
-              <br></br>
-              <li>Phone : {phone}</li>
-              <br></br>
-              <li>DOB : {dob}</li>
-
-            </ul>
-          </div>
-          <div className="card-flap flap2">
-            <div className="card-actions">
-            </div>
-          </div>
-        </div>
-      </div >
-    </>
-
+        <Typography color="gray">
+          <ul className="uldesc mt-10">
+            <li>
+              Email : {editing ? <input type="text" name="email" className="input-fieldcard" value={editedInfo.email} onChange={handleChange} /> : editedInfo.email}
+            </li>
+            <li>
+              Phone : {editing ? <input type="text" name="phone" className="input-fieldcard" value={editedInfo.phone} onChange={handleChange} /> : editedInfo.phone}
+            </li>
+            <li>
+              DOB : {editing ? <input type="text" name="dob" className="input-fieldcard" value={editedInfo.dob} onChange={handleChange} /> : editedInfo.dob}
+            </li>
+          </ul>
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-3 ">
+        {!editing && (
+          <Button onClick={handleresultclick} className="bg-custom-gradient" size="lg" fullWidth={true}>
+            Show Result
+          </Button>
+        )}
+      </CardFooter>
+    </Card>
   );
-};
-
-export default Card;
+}
