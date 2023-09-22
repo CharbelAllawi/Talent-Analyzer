@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../../components/Card/Card'
-import $ from 'jquery'; // Import jQuery
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
 import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
-
-
+import { CandidateCard } from '../../components/Card/Card';
+import './style.css'
 
 function MyCandidates() {
   const navigation = useNavigate();
   const [loading, setLoading] = useState(true);
   const [cardData, setCardData] = useState([]);
-
-  const [zIndex, setZIndex] = useState(10);
-  const [isShowing, setIsShowing] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +22,6 @@ function MyCandidates() {
         });
         setLoading(false);
         console.log(response);
-
         setCardData(response);
       } catch (error) {
         setLoading(false);
@@ -36,20 +30,24 @@ function MyCandidates() {
     };
 
     fetchData();
-
   }, []);
 
+  const handleDelete = (idToDelete) => {
+    // Filter out the candidate with the specified idToDelete
+    const updatedCardData = cardData.filter(candidate => candidate.id !== idToDelete);
+    setCardData(updatedCardData);
+  };
 
   return (
     <>
       {loading ? (
         <Loading />
       ) : (
-        <>
+        <div>
           <Navbar selecteditem='My Candidates' />
-          <div className="cards">
+          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-52 mt-20">
             {cardData.map((candidate) => (
-              <Card
+              <CandidateCard
                 key={candidate.id}
                 id={candidate.id}
                 fullName={candidate.full_name}
@@ -60,16 +58,16 @@ function MyCandidates() {
                 email={candidate.email}
                 iscompared={candidate.iscompared}
                 comparepage={false}
-
+                onDelete={handleDelete} // Pass the handleDelete function as a prop
               />
             ))}
           </div>
-          <Footer />
-        </>
+        </div>
       )}
+      <div className='footcont'></div>
+      <Footer />
     </>
   );
-};
-
+}
 
 export default MyCandidates;
