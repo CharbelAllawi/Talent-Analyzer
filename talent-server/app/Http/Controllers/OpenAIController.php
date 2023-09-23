@@ -8,27 +8,38 @@ use OpenAI;
 
 class OpenAIController extends Controller
 {
-    public function openai(Request $request)
-    {
-        $yourApiKey = getenv('OPENAI_API_KEY');
-        $client = OpenAI::client($yourApiKey);
-        $filePath = storage_path('app/public/candidatestext/' . $request->id . '.txt');
-        $existingContent = file_get_contents($filePath);
-        $jsonresult = $client->completions()->create([
-            'model' => 'gpt-3.5-turbo-instruct',
-            'prompt' => $existingContent,
-            'max_tokens' => 2048,
-        ]);
+  public function openai(Request $request)
+  {
+    $yourApiKey = getenv('OPENAI_API_KEY');
+    $client = OpenAI::client($yourApiKey);
+    $filePath = storage_path('app/public/candidatestext/' . $request->id . '.txt');
+    $existingContent = file_get_contents($filePath);
 
-        $resultData = json_decode($jsonresult['choices'][0]['text'], true);
+    $jsonresult = $client->completions()->create([
+      'model' => 'gpt-3.5-turbo-instruct',
+      'prompt' => $existingContent,
+      'max_tokens' => 2048,
+    ]);
 
-        $result = new Result([
-            'candidate_id' => $request->id,
-            'result' => $resultData['result'],
-            'percentage' => $resultData['percentage'],
-        ]);
+    $resultData = json_decode($jsonresult['choices'][0]['text'], true);
 
-        $result->save();
-        return $jsonresult['choices'][0]['text'];
+    while (!isset($resultData['result'])) {
+      $jsonresult = $client->completions()->create([
+        'model' => 'gpt-3.5-turbo-instruct',
+        'prompt' => $existingContent,
+        'max_tokens' => 2048,
+      ]);
+      $resultData = json_decode($jsonresult['choices'][0]['text'], true);
     }
+
+    $result = new Result([
+      'candidate_id' => $request->id,
+      'result' => $resultData['result'],
+      'percentage' => $resultData['percentage'],
+    ]);
+
+    $result->save();
+
+    return $resultData['result'];
+  }
 }
