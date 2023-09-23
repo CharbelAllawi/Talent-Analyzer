@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Candidate;
+use App\Models\Compare;
 use App\Models\Result;
 use App\Models\User;
 use App\Models\UserCandidate;
@@ -69,6 +70,7 @@ class CandidateController extends Controller
         $candidates = $user->candidates->map(function ($candidate) {
             $candidate = Candidate::find($candidate->id);
             $compares = $candidate->compares;
+            $result = $candidate->results;
             if ($compares->count() > 0) {
                 return [
                     'id' => $candidate->id,
@@ -78,6 +80,7 @@ class CandidateController extends Controller
                     'dob' => $candidate->date_of_birth,
                     'position' => $candidate->position,
                     'image_url' => $candidate->image_url,
+                    'result' => $result['result'],
                     'iscompared' => true,
                 ];
             } else {
@@ -89,6 +92,7 @@ class CandidateController extends Controller
                     'dob' => $candidate->date_of_birth,
                     'position' => $candidate->position,
                     'image_url' => $candidate->image_url,
+                    'result' => $result['result'],
                     'iscompared' => false
                 ];
             }
@@ -115,5 +119,15 @@ class CandidateController extends Controller
         $candidate->position = $request->input('position');
         $candidate->save();
         return response()->json(['message' => 'Candidate updated successfully'], 200);
+    }
+    public function deletecandidate(Request $request)
+    {
+        UserCandidate::where('candidate_id', $request->id)->delete();
+        Result::where('candidate_id', $request->id)->delete();
+        Compare::where('candidate_id', $request->id)->delete();
+        Candidate::where('id', $request->id)->delete();
+
+
+        return response()->json(['message' => 'Candidate deleted successfully']);
     }
 }
