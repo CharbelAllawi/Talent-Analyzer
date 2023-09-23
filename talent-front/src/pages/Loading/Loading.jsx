@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'; // Import your CSS file or style it inline
+import './style.css'; 
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
