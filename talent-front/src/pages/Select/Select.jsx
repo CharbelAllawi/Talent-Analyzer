@@ -122,8 +122,8 @@ function Options() {
         </div>
 
         {isButtonVisible && (
-          <span className="comparecontainer">
-            <button className="comparebutton" onClick={handlenextbtn}>Next</button>
+          <span className="nextcontainer ">
+            <button className="nextbutton" onClick={handlenextbtn}>Next</button>
           </span>
         )}
 
