@@ -33,32 +33,35 @@ function MyCandidates() {
   }, []);
 
   const handleDelete = (idToDelete) => {
-    // Filter out the candidate with the specified idToDelete
     const updatedCardData = cardData.filter(candidate => candidate.id !== idToDelete);
     setCardData(updatedCardData);
   };
 
   return (
     <>
+
       {loading ? (
         <Loading />
       ) : (
         <div>
           <Navbar selecteditem='My Candidates' />
+          <div className='hcontainer'>
+            <h1>My Candidates</h1>
+          </div>
           <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-52 mt-20">
             {cardData.map((candidate) => (
               <CandidateCard
                 key={candidate.id}
                 id={candidate.id}
-                fullName={candidate.full_name}
+                full_name={candidate.full_name}
                 position={candidate.position}
                 imageUrl={candidate.image_url}
-                dob={candidate.dob}
+                date_of_birth={candidate.dob}
                 phone={candidate.phone_number}
                 email={candidate.email}
                 iscompared={candidate.iscompared}
                 comparepage={false}
-                onDelete={handleDelete} // Pass the handleDelete function as a prop
+                onDelete={handleDelete}
               />
             ))}
           </div>
