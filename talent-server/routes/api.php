@@ -27,8 +27,10 @@ Route::get('/get-candidates', [CandidateController::class, 'getcandidates']);
 Route::post('/compare', [CompareController::class, 'compare']);
 Route::post('/uncompare', [CompareController::class, 'uncompare']);
 Route::post('/updatecandidate', [CandidateController::class, 'updatecandidate']);
+Route::post('/deletecandidate', [CandidateController::class, 'deletecandidate']);
 Route::post('/transcribe', [VideoToTextController::class, 'transcribe']);
 Route::post('/openai', [OpenAIController::class, 'openai']);
+Route::post('/comparecandidates', [CompareController::class, 'comparecandidates']);
 
 
 
