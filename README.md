@@ -1,0 +1,6 @@
+![title1](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/cc25e0db-4175-4655-b3ff-1e4d4f50e32e)
+![title2](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/59a0d8b4-eef1-4ef5-a55e-b20641a40177)
+![title3](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/df41e4b4-083f-47ea-ac16-804bfae13d09)
+![title4](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/9378b8ed-1fe3-450d-b028-8d650923fb00)
+![title5](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/3e53eac4-8846-41f2-902b-c7f5c57b7844)
+![title6](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/d1ab7f4f-12eb-4010-bda3-34a1b5ebecca)
