@@ -7,10 +7,12 @@ import { useNavigate } from 'react-router-dom';
 import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { localStorageAction } from "../../core/config/localstorage";
 import Footer from '../../components/Footer/Footer';
 function Options() {
+  const [t, i18n] = useTranslation("global");
   const animatedComponents = makeAnimated();
   const [selectedOptions, setSelectedOptions] = useState([
 
@@ -72,35 +74,35 @@ function Options() {
     }
   };
   const options = [
-    { value: "Software Engineer", label: "Software Engineer" },
-    { value: "Network Administrator", label: "Network Administrator" },
-    { value: "Data Scientist", label: "Data Scientist" },
-    { value: "Cyber Security Analyst", label: "Cyber Security Analyst" },
-    { value: "System Administrator", label: "System Administrator" },
-    { value: "Web Developer", label: "Web Developer" },
-    { value: "Database Administrator", label: "Database Administrator" },
-    { value: "Business Analyst", label: "Business Analyst" },
-    { value: "Cloud Architect", label: "Cloud Architect" },
-    { value: "UI/UX Designer", label: "UI/UX Designer" },
+    { value: t("candidateprofile.job1"), label: t("candidateprofile.job1") },
+    { value: t("candidateprofile.job2"), label: t("candidateprofile.job2") },
+    { value: t("candidateprofile.job3"), label: t("candidateprofile.job3") },
+    { value: t("candidateprofile.job4"), label: t("candidateprofile.job4") },
+    { value: t("candidateprofile.job5"), label: t("candidateprofile.job5") },
+    { value: t("candidateprofile.job6"), label: t("candidateprofile.job6") },
+    { value: t("candidateprofile.job7"), label: t("candidateprofile.job7") },
+    { value: t("candidateprofile.job8"), label: t("candidateprofile.job8") },
+    { value: t("candidateprofile.job9"), label: t("candidateprofile.job9") },
+    { value: t("candidateprofile.job10"), label: t("candidateprofile.job10") },
   ];
   const options2 = [
-    { value: "Communication", label: "Communication" },
-    { value: "Teamwork", label: "Teamwork" },
-    { value: "Problem Solving", label: "Problem Solving" },
-    { value: "Adaptability", label: "Adaptability" },
-    { value: "Time Management", label: "Time Management" },
-    { value: "Leadership", label: "Leadership" },
-    { value: "Emotional Intelligence", label: "Emotional Intelligence" },
-    { value: "Conflict Resolution", label: "Conflict Resolution" },
-    { value: "Critical Thinking", label: "Critical Thinking" },
-    { value: "Creativity", label: "Creativity" }
+    { value: t("select.soft1"), label: t("select.soft1") },
+    { value: t("select.soft2"), label: t("select.soft2") },
+    { value: t("select.soft3"), label: t("select.soft3") },
+    { value: t("select.soft4"), label: t("select.soft4") },
+    { value: t("select.soft5"), label: t("select.soft5") },
+    { value: t("select.soft6"), label: t("select.soft6") },
+    { value: t("select.soft7"), label: t("select.soft7") },
+    { value: t("select.soft8"), label: t("select.soft8") },
+    { value: t("select.soft9"), label: t("select.soft9") },
+    { value: t("select.soft10"), label: t("select.soft10") },
   ];
 
   return (
     <>
       <Navbar selecteditem="Add Candidate" />
       <div className='hcontainer'>
-        <h1>What are you looking for in your candidate?</h1>
+        <h1>{t("select.what")}</h1>
       </div>
 
       <div className="selectcontainer">
@@ -123,7 +125,7 @@ function Options() {
 
         {isButtonVisible && (
           <span className="nextcontainer ">
-            <button className="nextbutton" onClick={handlenextbtn}>Next</button>
+            <button className="nextbutton" onClick={handlenextbtn}>{t("upload.next")} </button>
           </span>
         )}
 
