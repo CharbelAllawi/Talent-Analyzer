@@ -9,10 +9,12 @@ import { requestMethods } from "../../core/enums/requestMethods";
 import { localStorageAction } from "../../core/config/localstorage";
 import Footer from '../../components/Footer/Footer';
 import Loading from '../Loading/Loading';
+import { useTranslation } from 'react-i18next';
+
 const CandidateProfile = () => {
   const animatedComponents = makeAnimated();
   const [loading, setLoading] = useState(false);
-
+  const [t, i18n] = useTranslation("global");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [candidateprofile, setCandidateProfile] = useState({
     full_name: '',
@@ -20,7 +22,7 @@ const CandidateProfile = () => {
     email: '',
     phone: '',
     position: '',
-    image: null, // Store the file object here
+    image: null,
   });
   const customStyles = {
     control: (provided) => ({
@@ -30,7 +32,7 @@ const CandidateProfile = () => {
     }),
     menu: (provided) => ({
       ...provided,
-      width: '485px', // Set the width you desire for the menu
+      width: '485px',
 
     }),
 
@@ -53,16 +55,16 @@ const CandidateProfile = () => {
   ]);
   const navigation = useNavigate();
   const options = [
-    { value: "Software Engineer", label: "Software Engineer" },
-    { value: "Network Administrator", label: "Network Administrator" },
-    { value: "Data Scientist", label: "Data Scientist" },
-    { value: "Cyber Security Analyst", label: "Cyber Security Analyst" },
-    { value: "System Administrator", label: "System Administrator" },
-    { value: "Web Developer", label: "Web Developer" },
-    { value: "Database Administrator", label: "Database Administrator" },
-    { value: "Business Analyst", label: "Business Analyst" },
-    { value: "Cloud Architect", label: "Cloud Architect" },
-    { value: "UI/UX Designer", label: "UI/UX Designer" },
+    { value: t("candidateprofile.job1"), label: t("candidateprofile.job1") },
+    { value: t("candidateprofile.job2"), label: t("candidateprofile.job2") },
+    { value: t("candidateprofile.job3"), label: t("candidateprofile.job3") },
+    { value: t("candidateprofile.job4"), label: t("candidateprofile.job4") },
+    { value: t("candidateprofile.job5"), label: t("candidateprofile.job5") },
+    { value: t("candidateprofile.job6"), label: t("candidateprofile.job6") },
+    { value: t("candidateprofile.job7"), label: t("candidateprofile.job7") },
+    { value: t("candidateprofile.job8"), label: t("candidateprofile.job8") },
+    { value: t("candidateprofile.job9"), label: t("candidateprofile.job9") },
+    { value: t("candidateprofile.job10"), label: t("candidateprofile.job10") },
   ];
   const handleDateChange = (e) => {
     const date = e.target.value;
@@ -177,16 +179,16 @@ const CandidateProfile = () => {
           <form action="#" method="post" id="signup">
             <span className='flex'>
               <i className="fas fa-user" style={{ fontSize: '40px', marginRight: '20px' }}></i>
-              <h1>Candidate Profile</h1>
+              <h1>{t("candidateprofile.candidateprofile")}</h1>
             </span>
 
             <fieldset className='fieldset'>
               <label>
-                Full Name<br />
-                <input type="text" name="full_name" placeholder="John Doe" onChange={handlecandidateprofile} required /><br />
+                {t("candidateprofile.fullname")}<br />
+                <input type="text" name="full_name" placeholder={t("candidateprofile.fullnameex")} onChange={handlecandidateprofile} required /><br />
               </label>
               <label>
-                Date of Birth<br />
+                {t("candidateprofile.dob")}<br />
                 <input
                   type="date"
                   name="date_of_birth "
@@ -215,24 +217,24 @@ const CandidateProfile = () => {
                 isLoading={false}
                 isRtl={false}
                 menuIsOpen={isMenuOpen}
-                placeholder="Select the job position."
+                placeholder={t("candidateprofile.selectjob")}
               />
               <label >
-                Email<br />
-                <input type="email" name="email" placeholder="johndoe@example.com" onChange={handlecandidateprofile} required /><br />
+                {t("candidateprofile.email")}<br />
+                <input type="email" name="email" placeholder={t("candidateprofile.emailex")} onChange={handlecandidateprofile} required /><br />
               </label>
               <label >
-                Phone<br />
-                <input type="phone" name="phone" placeholder="76968647" onChange={handlecandidateprofile} required /><br />
+                {t("candidateprofile.phone")}<br />
+                <input type="phone" name="phone" placeholder={t("candidateprofile.phoneex")} onChange={handlecandidateprofile} required /><br />
               </label>
 
               <label >
-                Profile Picture<br />
+                {t("candidateprofile.profilepic")}<br />
                 <input type="file" name="image" onChange={handlecandidateprofile} accept="image/*" /><br />
               </label>
             </fieldset>
             <footer>
-              <button type="submit" onClick={handlecreatebtn}>Create</button>
+              <button type="submit" onClick={handlecreatebtn}>{t("candidateprofile.create")}</button>
             </footer>
           </form >
           <Footer />
