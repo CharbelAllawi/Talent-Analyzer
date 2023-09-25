@@ -56,6 +56,8 @@ class CandidateController extends Controller
 
         if ($authorizedCandidate) {
             $results = Result::where('candidate_id', $candidateId)->get();
+            $results['full_name'] = $authorizedCandidate['full_name'];
+
             return response()->json(['result' => $results]);
         }
 
