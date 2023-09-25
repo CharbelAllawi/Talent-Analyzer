@@ -1,0 +1,108 @@
+{
+  "landing": {
+    "title": "Embauche",
+    "titlebutton": "Commencer maintenant",
+    "whyus": "Pourquoi nous choisir ?",
+    "success": "Témoignages de réussite",
+    "success1": "En quelques instants, l'histoire s'est répandue comme une traînée de poudre. Le résultat ? Une communauté unie dans un but, travaillant pour un avenir meilleur.",
+    "success2": "Au-delà de l'horizon, d'innombrables possibilités nous attendent. La réalisation ? Notre potentiel est limité uniquement par notre imagination et notre détermination.",
+    "success3": "À travers l'histoire, les révolutions ont déclenché des changements monumentaux. L'impact ? Des sociétés transformées et redéfinies par le pouvoir du peuple.",
+    "success4": "À travers le monde, les innovations continuent de façonner notre monde. La conclusion ? Un paysage technologique et de progrès en constante évolution.",
+    "success5": "Avant d'être mis en lumière dans le processus d'entretien traditionnel. Le résultat ? Le candidat s'est intégré de manière transparente dans l'équipe, devenant une force motrice.",
+    "success6": "Pendant les années tumultueuses, la résilience est devenue la clé de la survie. La leçon ? L'adversité peut forger les individus les plus forts.",
+    "name1": "Dmitri",
+    "name2": "James",
+    "name3": "Alex",
+    "name4": "Daniel"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "mycandidates": "Mes candidats",
+    "addinterview": "Ajouter un entretien",
+    "compare": "Comparer",
+    "signout": "Déconnexion"
+  },
+  "footer": {
+    "getstarted": "COMMENCER",
+    "start": "Démarrer",
+    "documentation": "Documentation",
+    "installation": "Installation",
+    "company": "ENTREPRISE",
+    "contact": "Contact",
+    "news": "Actualités",
+    "careers": "Carrières",
+    "legal": "JURIDIQUE",
+    "privacynotice": "Avis de confidentialité",
+    "termsofuse": "Conditions d'utilisation",
+    "quicklink": "LIENS RAPIDES",
+    "supportcenter": "Centre de support",
+    "servicestatus": "État du service",
+    "security": "Sécurité",
+    "blog": "Blog",
+    "customers": "Clients",
+    "reviews": "Avis",
+    "chat": "DISCUTONS",
+    "support": "avez-vous une question de support ?",
+    "intouch": "ENTRER EN CONTACT",
+    "callus": "VOUS NOUS APPELEZ"
+  },
+  "candidateprofile": {
+    "candidateprofile": "Profil du candidat",
+    "fullname": "Nom complet",
+    "fullnameex": "John Doe",
+    "dob": "Date de naissance",
+    "selectjob": "Sélectionnez le poste de travail.",
+    "job1": "Ingénieur logiciel",
+    "job2": "Administrateur réseau",
+    "job3": "Data Scientist",
+    "job4": "Analyste de cybersécurité",
+    "job5": "Administrateur système",
+    "job6": "Développeur Web",
+    "job7": "Administrateur de base de données",
+    "job8": "Analyste d'affaires",
+    "job9": "Architecte cloud",
+    "job10": "Designer UI/UX",
+    "email": "Email",
+    "emailex": "johndoe@example.com",
+    "phone": "Téléphone",
+    "phoneex": "76 968 647",
+    "profilepic": "Photo de profil",
+    "choosefile": "Choisir un fichier",
+    "nofile": "Aucun fichier choisi",
+    "create": "Créer"
+  },
+  "upload": {
+    "upload": "Télécharger votre entretien",
+    "browse": "Parcourir le fichier à télécharger",
+    "type": "Type de fichier : MP4",
+    "next": "Suivant"
+  },
+  "select": {
+    "what": "Que recherchez-vous chez votre candidat ?",
+    "select": "Sélectionnez jusqu'à 3 options de compétences comportementales.",
+    "soft1": "Communication",
+    "soft2": "Travail d'équipe",
+    "soft3": "Résolution de problèmes",
+    "soft4": "Adaptabilité",
+    "soft5": "Gestion du temps",
+    "soft6": "Leadership",
+    "soft7": "Intelligence émotionnelle",
+    "soft8": "Résolution de conflits",
+    "soft9": "Pensée critique",
+    "soft10": "Créativité"
+  },
+  "airesult": {
+    "ai": "Résultat de l'IA :",
+    "finish": "Terminer",
+    "best": "Meilleur candidat :"
+  },
+  "mycandidates": {
+    "mycandidates": "Mes candidats"
+  },
+  "comparecandidates": {
+    "comparecandidates": "Comparer les candidats",
+    "compare": "Comparer",
+    "select": "Vous devez sélectionner au moins deux candidats.",
+    "move": "Passage automatique aux candidats après 5 secondes..."
+  }
+}
