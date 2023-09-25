@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
-
+import './style.css'
 const Compare = ({ iscompared, candidate_id }) => {
-  const [IsCompared, setIsCompared] = useState(iscompared);
+  const [isCompared, setIsCompared] = useState(iscompared);
 
   const handleIsCompare = async () => {
     const formData = new FormData();
@@ -11,11 +11,11 @@ const Compare = ({ iscompared, candidate_id }) => {
     try {
       const response = await sendRequest({
         method: requestMethods.POST,
-        route: IsCompared ? "/uncompare" : "/compare",
+        route: isCompared ? "/uncompare" : "/compare",
         body: formData,
       });
 
-      setIsCompared(!IsCompared);
+      setIsCompared(!isCompared);
 
     } catch (error) {
       console.log(error);
@@ -23,29 +23,27 @@ const Compare = ({ iscompared, candidate_id }) => {
   };
 
   useEffect(() => {
-    console.log(IsCompared)
+    console.log(isCompared)
   }, [])
 
-
-  const handleIsCompareClick = () => {
-    setIsCompared(!IsCompared);
+  const handleToggleChange = () => {
+    setIsCompared(!isCompared);
     handleIsCompare();
   }
 
   return (
-    <div className='like flex row'>
-      {IsCompared ? (
-        <button className="icon-button addition-button" onClick={handleIsCompareClick}>
-          <i className="fas fa-user-minus" style={{ color: '#9c9cd5', fontSize: '24px', marginLeft: '17.2rem', marginRight: '1rem' }}></i>
-        </button>
-      ) : (
-        <button className="icon-button addition-button" onClick={handleIsCompareClick}>
-          <i className="fas fa-user-plus" style={{ color: '#9c9cd5  ', fontSize: '24px', marginLeft: '17.2rem', marginRight: '1rem' }}></i>
-        </button>
-      )}
+    <div className='like flex row toggle'>
+      <label className="toggle-switch">
+        <input
+          type="checkbox"
+          checked={isCompared}
+          onChange={handleToggleChange}
+        />
+        <span className="slider"></span>
+        <div className="tooltip">Add to Compare</div>
+      </label>
     </div>
   );
-
 };
 
 export default Compare;
