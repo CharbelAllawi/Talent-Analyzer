@@ -2,3 +2,8 @@
   width: 150px;
   margin-left: 10px;
 }
+
+.fixed {
+  width: 350px;
+  position: absolute;
+}
