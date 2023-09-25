@@ -46,7 +46,7 @@
 ### User Screens (Mobile)
 | Login screen  | Register screen | Landing screen | Loading screen |
 | ---| ---| ---| ---|
-| ![](<2023-09-25 - 01-10-44 - React App.png>) | ![](<2023-09-25 - 01-13-26 - React App.png>)   | ![](<2023-09-25 - 01-18-07 - React App.png>) |![Alt text](<2023-09-25 - 01-50-33 - React App.png>)  |
+|![login](<Sign in Page (1).jpg>)  | ![](<2023-09-25 - 01-13-26 - React App.png>)   | ![](<2023-09-25 - 01-18-07 - React App.png>) |![Alt text](<2023-09-25 - 01-50-33 - React App.png>)  |
 | Candidate Profile | Upload Video | Recruiter Preference | AI Result |
 |![](<2023-09-25 - 02-22-48 - React App.png>) | ![](<2023-09-25 - 02-24-19 - React App.png>) |![](<2023-09-25 - 02-25-12 - React App.png>) | ![](<2023-09-25 - 02-26-31 - React App.png>)
 | My Candidates| Compare | Compare Result | Admin CRUD |
