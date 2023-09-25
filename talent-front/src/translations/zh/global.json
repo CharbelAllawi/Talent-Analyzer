@@ -1,0 +1,108 @@
+{
+  "landing": {
+    "title": "招聘",
+    "titlebutton": "立即开始",
+    "whyus": "为什么选择我们？",
+    "success": "成功故事",
+    "success1": "瞬间间，这个故事如野火般传播。结果是令人团结一心，共同朝着更美好的未来努力。",
+    "success2": "在地平线之外，无尽的可能性等待着。觉悟是什么？我们的潜力只受我们的想象力和决心所限。",
+    "success3": "纵观历史，革命引发了巨大的变革。影响是什么？社会被人民的力量重新定义和改变。",
+    "success4": "在全球范围内，创新不断塑造着我们的世界。经验教训是什么？技术和进步的不断发展。",
+    "success5": "在传统面试过程中，他们曾被强调。结果是候选人无缝融入团队，成为推动力。",
+    "success6": "在动荡的岁月里，坚韧变成了生存的关键。教训是什么？逆境可以锻造最坚强的个体。",
+    "name1": "迪米特里",
+    "name2": "詹姆斯",
+    "name3": "亚历克斯",
+    "name4": "丹尼尔"
+  },
+  "navbar": {
+    "home": "首页",
+    "mycandidates": "我的候选人",
+    "addinterview": "添加面试",
+    "compare": "比较",
+    "signout": "退出"
+  },
+  "footer": {
+    "getstarted": "开始",
+    "start": "开始",
+    "documentation": "文档",
+    "installation": "安装",
+    "company": "公司",
+    "contact": "联系方式",
+    "news": "新闻",
+    "careers": "职业",
+    "legal": "法律",
+    "privacynotice": "隐私声明",
+    "termsofuse": "使用条款",
+    "quicklink": "快速链接",
+    "supportcenter": "支持中心",
+    "servicestatus": "服务状态",
+    "security": "安全",
+    "blog": "博客",
+    "customers": "客户",
+    "reviews": "评论",
+    "chat": "让我们聊聊",
+    "support": "有支持问题吗？",
+    "intouch": "保持联系",
+    "callus": "您可以给我们打电话"
+  },
+  "candidateprofile": {
+    "candidateprofile": "候选人档案",
+    "fullname": "全名",
+    "fullnameex": "约翰·多",
+    "dob": "出生日期",
+    "selectjob": "选择职位。",
+    "job1": "软件工程师",
+    "job2": "网络管理员",
+    "job3": "数据科学家",
+    "job4": "网络安全分析员",
+    "job5": "系统管理员",
+    "job6": "Web开发人员",
+    "job7": "数据库管理员",
+    "job8": "业务分析师",
+    "job9": "云架构师",
+    "job10": "UI/UX设计师",
+    "email": "电子邮件",
+    "emailex": "johndoe@example.com",
+    "phone": "电话",
+    "phoneex": "76 968 647",
+    "profilepic": "个人图片",
+    "choosefile": "选择文件",
+    "nofile": "未选择文件",
+    "create": "创建"
+  },
+  "upload": {
+    "upload": "上传您的面试",
+    "browse": "浏览要上传的文件",
+    "type": "文件类型：MP4",
+    "next": "下一步"
+  },
+  "select": {
+    "what": "您在候选人中寻找什么？",
+    "select": "选择最多3个软技能选项。",
+    "soft1": "沟通",
+    "soft2": "团队合作",
+    "soft3": "问题解决",
+    "soft4": "适应能力",
+    "soft5": "时间管理",
+    "soft6": "领导力",
+    "soft7": "情商",
+    "soft8": "冲突解决",
+    "soft9": "批判性思维",
+    "soft10": "创造力"
+  },
+  "airesult": {
+    "ai": "AI结果：",
+    "finish": "完成",
+    "best": "最佳候选人是："
+  },
+  "mycandidates": {
+    "mycandidates": "我的候选人"
+  },
+  "comparecandidates": {
+    "comparecandidates": "比较候选人",
+    "compare": "比较",
+    "select": "您需要至少选择两名候选人。",
+    "move": "5秒后自动转到候选人..."
+  }
+}
