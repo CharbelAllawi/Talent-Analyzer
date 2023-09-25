@@ -7,11 +7,13 @@ import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { CandidateCard } from '../../components/Card/Card';
 import './style.css'
+import { useTranslation } from 'react-i18next';
 
 function MyCandidates() {
   const navigation = useNavigate();
   const [loading, setLoading] = useState(true);
   const [cardData, setCardData] = useState([]);
+  const [t, i18n] = useTranslation("global");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,9 +48,9 @@ function MyCandidates() {
         <div>
           <Navbar selecteditem='My Candidates' />
           <div className='hcontainer'>
-            <h1>My Candidates</h1>
+            <h1>{t("mycandidates.mycandidates")}</h1>
           </div>
-          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-52 mt-20">
+          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ml-52 mt-20">
             {cardData.map((candidate) => (
               <CandidateCard
                 key={candidate.id}
