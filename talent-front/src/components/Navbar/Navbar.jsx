@@ -3,9 +3,23 @@ import navlogo from "../../assets/navlogo.svg";
 import "./style.css";
 import { useNavigate } from 'react-router-dom';
 import { localStorageAction } from '../../core/config/localstorage';
+import { useTranslation } from 'react-i18next';
 
 function Navbar(selecteditem) {
   const navigation = useNavigate();
+  const [t, i18n] = useTranslation("global");
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+    setSelectedLanguage(lang)
+  };
+  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('lang') || 'en');
+
+  useEffect(() => {
+    if (localStorage.getItem("lang") != null) {
+      i18n.changeLanguage(localStorage.getItem("lang"));
+    }
+  }, [])
 
   const token = localStorage.getItem('token');
   const [selectedNavItem, setSelectedNavItem] = useState(selecteditem['selecteditem']);
@@ -103,22 +117,40 @@ function Navbar(selecteditem) {
 
           {token != "" ? (
             <>
-              <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/" className={`nav-link ${selectedNavItem === 'Home' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Home')}>Home</a>
+              <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
+                <div className="language-dropdown">
+                  <label className="language-label" htmlFor="language-select">Select Language:</label>
+                  <select
+                    className="language-select"
+                    id="language-select"
+                    onChange={(e) => handleChangeLanguage(e.target.value)}
+                    value={selectedLanguage}
+                  >
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                    <option value="in">IN</option>
+                    <option value="zh">ZH</option>
+                  </select>
+                </div>
               </li>
               <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/mycandidates" className={`nav-link ${selectedNavItem === 'My Candidates' ? 'selected' : ''}`} onClick={() => handleNavItemClick('My Candidates')}>My Candidates</a>
+                <a href="/" className={`nav-link ${selectedNavItem === 'Home' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Home')}>{t("navbar.home")}</a>
               </li>
               <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/candidateprofile" className={`nav-link ${selectedNavItem === 'Add Candidate' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Add Candidate')}>Add Interview</a>
+                <a href="/mycandidates" className={`nav-link ${selectedNavItem === 'My Candidates' ? 'selected' : ''}`} onClick={() => handleNavItemClick('My Candidates')}>{t("navbar.mycandidates")}</a>
+              </li>
+              <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
+                <a href="/candidateprofile" className={`nav-link ${selectedNavItem === 'Add Candidate' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Add Candidate')}>{t("navbar.addinterview")}</a>
               </li>
 
               <li className={`md:mr-20  mb-2 md:mb-0  ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/comparecandidates" className={`nav-link ${selectedNavItem === 'Compare' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Commpare')}>Compare</a>
+                <a href="/comparecandidates" className={`nav-link ${selectedNavItem === 'Compare' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Commpare')}>{t("navbar.compare")}</a>
               </li>
 
               <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>
-                <a href="/account" className={`nav-link ${selectedNavItem === 'Login' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Sign Out')}>Sign Out</a>
+                <a href="/account" className={`nav-link ${selectedNavItem === 'Login' ? 'selected' : ''}`} onClick={() => handleNavItemClick('Sign Out')}>{t("navbar.signout")}</a>
               </li>
             </>
 
