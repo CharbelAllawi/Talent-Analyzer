@@ -9,10 +9,12 @@ import Footer from '../../components/Footer/Footer';
 import Loading from '../Loading/Loading';
 import { sendRequest } from "../../core/config/request";
 import { requestMethods } from "../../core/enums/requestMethods";
+import { useTranslation } from 'react-i18next';
+
 function VideoUpload() {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const [t, i18n] = useTranslation("global");
   const [showProgress, setShowProgress] = useState(false);
   const fileInputRef = useRef(null);
   const navigation = useNavigate();
@@ -65,13 +67,13 @@ function VideoUpload() {
 
       <Navbar selecteditem="Add Candidate" />
       <div className='upload-box' onDrop={handleDrop} onDragOver={handleDragOver}>
-        <p>Upload Your Interview</p>
+        <p>{t("upload.upload")}</p>
         <form>
           <input className='file-input' type='file' name='file' hidden ref={fileInputRef} onChange={(e) => uploadFile(e.target.files[0])}></input>
           <div className='icon' onClick={handleFileInputClick}>
             <img src={upload} alt='upload'></img>
           </div>
-          <p>Browser File to upload</p>
+          <p>{t("upload.browse")}</p>
           <p className='text-xs'>File Type: MP4</p>
         </form>
 
@@ -104,7 +106,7 @@ function VideoUpload() {
         )}
         {uploadedFile && (
           <span className="nextvideocontainer">
-            <button className="nextbuttonvideo" onClick={handlenextbtn}>Next</button>
+            <button className="nextbuttonvideo" onClick={handlenextbtn}>{t("upload.next")}</button>
           </span>
         )}
       </div>
