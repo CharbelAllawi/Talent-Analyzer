@@ -1,0 +1,108 @@
+{
+  "landing": {
+    "title": "Hiring",
+    "titlebutton": "Start Now",
+    "whyus": "Why choose us?",
+    "succ ess": "Success Stories",
+    "success1": "Within moments, the story had spread like wildfire. The outcome? A community united in purpose, working towards a brighter future.",
+    "success2": "Beyond the horizon, endless possibilities await. The realization? Our potential is limited only by our imagination and determination.",
+    "success3": "Throughout history, revolutions have sparked monumental change. The impact? Societies transformed and redefined by the power of the people.",
+    "success4": "Across the globe, innovations continue to shape our world. The takeaway? An ever-evolving landscape of technology and progress.",
+    "success5": "Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force",
+    "success6": "During the tumultuous years, resilience became the key to survival. The lesson? Adversity can forge the strongest of individuals.",
+    "name1": "Dmitri",
+    "name2": "James",
+    "name3": "Alex",
+    "name4": "Daniel"
+  },
+  "navbar": {
+    "home": "Home",
+    "mycandidates": "My Candidates",
+    "addinterview": "Add Interview",
+    "compare": "Compare",
+    "signout": "Sign Out"
+  },
+  "footer": {
+    "getstarted": "GET STARTED",
+    "start": "Start",
+    "documentation": "Documentation",
+    "installation": "Installation",
+    "company": "COMPANY",
+    "contact": "Contact",
+    "news": "News",
+    "careers": "Careers",
+    "legal": "LEGAL",
+    "privacynotice": "Privacy Notice",
+    "termsofuse": "Terms Of Use",
+    "quicklink": "QUICK LINKS",
+    "supportcenter": "Support Center",
+    "servicestatus": "Service Status",
+    "security": "Security",
+    "blog": "Blog",
+    "customers": "Customers",
+    "reviews": "Reviews",
+    "chat": "LET'S CHAT",
+    "support": "have a support question?",
+    "intouch": "GET IN TOUCH",
+    "callus": "YOU CALL US"
+  },
+  "candidateprofile": {
+    "candidateprofile": "Candidate Profile",
+    "fullname": "Full Name",
+    "fullnameex": "John Doe",
+    "dob": "Date of Birth",
+    "selectjob": "Select The Job Position.",
+    "job1": "Software Engineer",
+    "job2": "Network Administrator",
+    "job3": "Data Scientist",
+    "job4": "Cyber Security Analyst",
+    "job5": "System Administrator",
+    "job6": "Web Developer",
+    "job7": "Database Administrator",
+    "job8": "Business Analyst",
+    "job9": "Cloud architect",
+    "job10": "UI/UX Designer",
+    "email": "Email",
+    "emailex": "johndoe@example.com",
+    "phone": "Phone",
+    "phoneex": "76 968 647",
+    "profilepic": "Profile Picture",
+    "choosefile": "Choose File",
+    "nofile": "No file chosen",
+    "create": "Create"
+  },
+  "upload": {
+    "upload": "Upload Your Interview",
+    "browse": "Browse File To Upload",
+    "type": "FIle Type:MP4",
+    "next": "Next"
+  },
+  "select": {
+    "what": "What are you looking for in your candidate?",
+    "select": "Select up to 3 soft skills options.",
+    "soft1": "Communication",
+    "soft2": "Teamwork",
+    "soft3": "Problem Solving",
+    "soft4": "Adaptability",
+    "soft5": "Time Management",
+    "soft6": "Leadership",
+    "soft7": "Emotional Intelligence",
+    "soft8": "Conflict Resolution",
+    "soft9": "Critical Thinking",
+    "soft10": "Creativity"
+  },
+  "airesult": {
+    "ai": "AI Result:",
+    "finish": "Finish",
+    "best": "Best Candidate Is:"
+  },
+  "mycandidates": {
+    "mycandidates": "My Candidates"
+  },
+  "comparecandidates": {
+    "comparecandidates": "Compare Candidates",
+    "compare": "Compare",
+    "select": "You Need To Select At Least Two Candidates.",
+    "move": "Moving Automatically To Candidates After 5 sec..."
+  }
+}
