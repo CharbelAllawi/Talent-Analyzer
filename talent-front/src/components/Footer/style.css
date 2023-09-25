@@ -1,7 +1,8 @@
 .pg-footer {
   font-family: 'Inter', sans-serif;
-}
+  width: 100%;
 
+}
 
 .footer {
   background-image: linear-gradient(260deg, #393973 21.62%, #6C6CD9 95.41%);
@@ -26,9 +27,10 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1230px;
-  padding: 40px 15px 450px;
+  padding: 40px 15px;
   position: relative;
 }
+
 
 .footer-content-column {
   box-sizing: border-box;
@@ -249,10 +251,8 @@
 
 
 
-/* Media Query For different screens */
 @media (min-width:320px) and (max-width:479px) {
 
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -264,7 +264,6 @@
 
 @media (min-width:480px) and (max-width:599px) {
 
-  /* smartphones, Android phones, landscape iPhone */
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -276,7 +275,6 @@
 
 @media (min-width:600px) and (max-width: 800px) {
 
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -287,17 +285,14 @@
 }
 
 @media (min-width:801px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
 
 }
 
 @media (min-width:1025px) {
-  /* big landscape tablets, laptops, and desktops */
 
 }
 
 @media (min-width:1281px) {
-  /* hi-res laptops and desktops */
 
 }
 
