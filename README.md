@@ -11,16 +11,19 @@
 <!-- project philosophy -->
 ![title2](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/59a0d8b4-eef1-4ef5-a55e-b20641a40177)
 
-> AI interview analyzer will take your interview video(s) to provide you with the best candidate(s) for your company. 
+> Talent analyzer is an AI powered analyzer that will take your interview video(s) to provide you with the best candidate(s) for your company. The problem this project is trying to solve is the difficulty of assessing candidates' skills and attitudes during interviews.
 
->The problem this project is trying to solve is the difficulty of assessing candidates' skills and attitudes during interviews.
-
->So AI solved the issue with its ability to analyze how well the candidate(s) performed , it will solve the problem by extracting the questions and the answers of the interview, analyzing it, and giving you a repor
+>So AI solved the issue with its ability to analyze how well the candidate(s) performed , it will solve the problem by extracting the questions and the answers of the interview, analyzing it, and giving you a report.
 
 ### User Stories
-- Talent analyzer is an AI powered analyzer that will take your interview video(s) to provide you with the best candidate(s) for your company. The problem this project is trying to solve is the difficulty of assessing candidates' skills and attitudes during interviews.
-
-- So AI solved the issue with its ability to analyze how well the candidate(s) performed , it will solve the problem by extracting the questions and the answers of the interview, analyzing it, and giving you a report.
+- As a recruiter, i want to register an account on the website, so that i can login and use the features of website.
+- As a recruiter, I want to log in to the website and upload an interview video so that i get a report about the candidate.
+- As a recruiter, I want to change the website language, so i can understand what's going on.
+- As a recruiter, I want to upload several interview videos, so that i compare candidates.
+- As a recruiter, I want to be able to review previous interview analysis, so i can refresh my memory.
+- As a recruiter, I want to be able tos elect preferences after uploading video, so i can find the candidate needed.
+- As a recruiter, I want to edit / delete candidates, so i can remove mistakes.
+- As a admin, I want to perform CRUD operation so, i can manage the website.
 
 
 <br><br>
