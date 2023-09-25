@@ -50,11 +50,16 @@ function Account() {
         route: '/login',
         body: loginCredentials,
       });
-
       localStorage.setItem("token", response.authorisation.token);
       console.log(localStorage.getItem('token'))
 
-      navigation("/");
+      if (response.user.id === 1) {
+        navigation("/admin");
+      }
+      else {
+        navigation("/");
+
+      }
     } catch (error) {
       console.log(error);
     }
