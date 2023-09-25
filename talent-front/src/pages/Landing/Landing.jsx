@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import herovideo from '../../assets/herovideo.mp4';
 import whyus from '../../assets/whyus.mp4';
 import google from '../../assets/google.png';
@@ -7,19 +7,30 @@ import mercedes from '../../assets/mercedes.png';
 import murex from '../../assets/murex.png';
 import facebook from '../../assets/facebook.png';
 import apple from '../../assets/apple.png';
+import logo from "../../assets/talentheader.svg";
 import { useNavigate } from 'react-router-dom';
-
-
 import "./style.css"
 import Typed from 'typed.js';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import { useTranslation } from 'react-i18next';
 
 
 function Landing() {
   const navigation = useNavigate();
-
+  const [t, i18n] = useTranslation("global");
   const typedTextRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
   const handlestartbtn = () => {
     if (localStorage.getItem('token') != '') {
       navigation('/candidateprofile')
@@ -94,16 +105,28 @@ function Landing() {
       <Navbar selecteditem="Home" />
       <div className="landing-container">
         <div className="">
+
           <div className="relative hero-header-container">
+
             <video autoPlay muted className="video">
               <source src={herovideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            <div>
+              {isVisible && (
+                <div className="talentcontainer " >
+                  <img className="headlogo fade-in" src={logo} alt="Logo" />
+                </div>
+              )}
+            </div>
+
             <div className="hirecontainer">
-              <h1 className="hireword">Hiring</h1>
+
+              <h1 className="hireword">{t("landing.title")}</h1>
+
               <span className='autoword' ref={typedTextRef}></span>
               <div className="startcontainer">
-                <button class="startbtn" onClick={handlestartbtn}>Start Now</button>
+                <button class="startbtn" onClick={handlestartbtn}>{t("landing.titlebutton")}</button>
               </div>
             </div>
           </div>
@@ -112,7 +135,7 @@ function Landing() {
           <div className="whyus">
             <h1 className="whychoosewordcont">
               <div class="arrow">&gt;</div>
-              Why choose us?
+              {t("landing.whyus")}
             </h1>
             <video autoPlay loop muted className="video">
               <source src={whyus} type="video/mp4" />
@@ -124,19 +147,18 @@ function Landing() {
           <div className="whyus-container">
             <h1 className="successcontainer">
               <div class="arrow">&gt;</div>
-              Success Stories
+              {t("landing.success")}
             </h1>
           </div>
           <div>
             <div className="wrapper-2">
               <div className="itemsfixed">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
+                <p>   {t("landing.success1")}</p>
                 <br></br>
-                <span className="name">Dmitri</span>
+                <br></br>
+                <span className="name">{t("landing.name4")}</span>
                 <span className="pic">
                   <img src={facebook} alt="" />
                 </span>
@@ -144,13 +166,11 @@ function Landing() {
             </div>
             <div className="wrapper-3">
               <div className="itemsfixed">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
+                <p>   {t("landing.success2")}</p>
                 <br></br>
-                <span className="name">Dmitri</span>
+                <span className="name">{t("landing.name2")}</span>
                 <span className="pic">
                   <img src={apple} alt="" />
                 </span>
@@ -158,49 +178,40 @@ function Landing() {
             </div>
             <div className="wrapper">
               <div className="items active">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
-                <br></br>
-                <span className="name">Dmitri</span>
+                <p>   {t("landing.success3")}</p>
+                <span className="name">{t("landing.name3")}</span>
                 <span className="pic">
                   <img src={google} alt="" />
                 </span>
               </div>
               <div className="items">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
+                <p>   {t("landing.success4")}</p>
                 <br></br>
-                <span className="name">James</span>
+                <span className="name">{t("landing.name1")}</span>
                 <span className="pic">
                   <img src={amazon} alt="" />
                 </span>
               </div>
               <div className="items">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
+                <p>   {t("landing.success5")}</p>
                 <br></br>
-                <span className="name">Daniel</span>
+                <span className="name">{t("landing.name2")}</span>
                 <span className="pic">
                   <img src={mercedes} alt="" />
                 </span>
               </div>
               <div className="items">
-                <p>-Using Talent Analyzer, they found a diamond in the rough. Our AI analysis identified a candidate's exceptional problem-solving abilities and effective teamwork,</p>
                 <br></br>
-                <p>-Before they were highlighted in the traditional interview process. The result? The candidate seamlessly integrated into the team, becoming a driving force </p>
                 <br></br>
-                <p>-Innovative projects.Their ability to adapt quickly to new challenges and their proactive approach to finding solutions impressed both colleagues and superiors.</p>
+                <p>   {t("landing.success6")}</p>
                 <br></br>
-                <span className="name">Daniel</span>
+                <span className="name">{t("landing.name1")}</span>
                 <span className="pic">
                   <img src={murex} alt="" />
                 </span>
@@ -210,8 +221,8 @@ function Landing() {
           </div >
 
         </div>
-        <Footer />
 
+        <Footer />
       </div >
     </>
 
