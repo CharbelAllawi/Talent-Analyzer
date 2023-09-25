@@ -6,6 +6,7 @@ use App\Http\Controllers\CompareController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\OpenAIController;
 use App\Http\Controllers\UploadFileController;
+use App\Http\Controllers\UserCRUDController;
 use App\Http\Controllers\VideoToTextController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,9 @@ Route::post('/deletecandidate', [CandidateController::class, 'deletecandidate'])
 Route::post('/transcribe', [VideoToTextController::class, 'transcribe']);
 Route::post('/openai', [OpenAIController::class, 'openai']);
 Route::post('/comparecandidates', [CompareController::class, 'comparecandidates']);
-
+Route::get('/get_users/{id?}', [UserCRUDController::class, "get_users"]);
+Route::post('/addOrUpdateUser/{id?}', [UserCRUDController::class, "addOrUpdateUser"]);
+Route::post('/remove-user/{id?}', [UserCRUDController::class, "removeuser"]);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
