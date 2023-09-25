@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { CandidateCard } from '../../components/Card/Card';
 import Snackbar from '../../components/Snackbar/Snackbar';
+import { useTranslation } from 'react-i18next';
+
 import "./style.css"
 
 function CompareCandidate() {
@@ -21,9 +23,11 @@ function CompareCandidate() {
 
   const [loading, setLoading] = useState(true);
   const [cardData, setCardData] = useState([]);
+  const [t, i18n] = useTranslation("global");
 
 
   const handleCompareBtn = async () => {
+    setLoading(true)
     let prompt = "i want you analyze the below candidates and return the chosen candidate\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is only 5 lines maximum \nThe JSON object should be in this format {chosen_candidate :   , result:}"
     cardData.forEach(data => {
       if (data['iscompared'] == true) {
@@ -38,9 +42,10 @@ function CompareCandidate() {
         route: '/comparecandidates',
         body: { 'prompt': prompt }
       });
+      setLoading(false)
       localStorage.setItem("compareresult", response['result']);
-      localStorage.setItem("comparechose", response['chosen_candidate']);
-
+      localStorage.setItem("comparechosen", response['chosen_candidate']);
+      navigation('/result/compare')
     } catch (error) {
     }
   }
@@ -48,6 +53,7 @@ function CompareCandidate() {
     const updatedCardData = cardData.filter(candidate => candidate.id !== idToDelete);
     setCardData(updatedCardData);
   };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,9 +62,13 @@ function CompareCandidate() {
           route: '/get-candidates',
         });
         setLoading(false);
-        console.log(response);
-
         setCardData(response);
+        console.log(response);
+        if (response.filter((candidate) => candidate.iscompared).length < 2) {
+          setTimeout(() => {
+            navigation('/mycandidates');
+          }, 5000);
+        }
       } catch (error) {
         setLoading(false);
         console.log(error);
@@ -78,9 +88,9 @@ function CompareCandidate() {
         <>
           <Navbar selecteditem="Compare" />
           <div className='hcontainer'>
-            <h1>Compare Candidates</h1>
+            <h1>{t("comparecandidates.comparecandidates")}</h1>
           </div>
-          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ml-52 mt-20">
+          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ml-52 mt-20">
 
             {cardData.map((candidate) => {
 
@@ -96,7 +106,7 @@ function CompareCandidate() {
                     phone={candidate.phone_number}
                     email={candidate.email}
                     iscompared={candidate.iscompared}
-                    comparepage={false}
+                    comparepage={true}
                     onDelete={handleDelete}
                   />
                 );
@@ -104,8 +114,14 @@ function CompareCandidate() {
             })}
           </div>
           <span className="comparecontainer">
+
+            {cardData.filter((candidate) => candidate.iscompared).length < 2 && (
+              <div className='h2container'>
+                <h2>{t("comparecandidates.select")}</h2>
+                <h2>{t("comparecandidates.move")}</h2>
+              </div>)}
             {cardData.filter((candidate) => candidate.iscompared).length >= 2 && (
-              <button className="comparebutton" onClick={handleCompareBtn}>Compare</button>
+              <button className="comparebutton" onClick={handleCompareBtn}>{t("comparecandidates.compare")}</button>
             )}
           </span>
 
