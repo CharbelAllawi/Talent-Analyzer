@@ -58,6 +58,7 @@
 
 .success-container {
   position: relative;
+
 }
 
 .whyus {
@@ -87,7 +88,33 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
   color: black;
-  margin-bottom: 35%;
+  margin-bottom: 27%;
+}
+
+.talentcontainer {
+
+  position: absolute;
+  top: 50%;
+  left: 70rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  margin-left: 5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+
+
+}
+
+.talent {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.headlogo {
+  width: 1900px;
+  margin-left: -200px;
 }
 
 .arrow {
@@ -144,7 +171,7 @@
   box-sizing: border-box;
   padding: 15px;
   width: 100%;
-  height: 400px;
+  height: 250px;
   background: rgb(255, 255, 255);
   position: absolute;
   transform: translateY(100%) scale(1.3);
@@ -210,7 +237,19 @@
 
 }
 
+.fade-in {
+  animation: fadeIn 5s ease-in;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 @media (max-width: 768px) {
 
@@ -266,7 +305,6 @@
     position: static;
     transform: none;
     margin-left: 2rem;
-    margin-bottom: 59%;
   }
 
   .items,
