@@ -45,6 +45,7 @@
 
     form.sign-in-form {
       z-index: 2;
+      padding-left: 30%;
     }
 
     .title {
@@ -160,6 +161,7 @@
       transition: 1.8s ease-in-out;
       border-radius: 50%;
       z-index: 6;
+
     }
 
     .image {
@@ -175,16 +177,20 @@
       justify-content: space-around;
       text-align: center;
       z-index: 6;
+
     }
 
     .left-panel {
       pointer-events: all;
       padding: 3rem 17% 2rem 12%;
+
     }
 
     .right-panel {
       pointer-events: none;
       padding: 3rem 12% 2rem 17%;
+
+
     }
 
     .panel .content {
@@ -219,7 +225,6 @@
       transform: translateX(800px);
     }
 
-    /* ANIMATION */
 
     .container.sign-up-mode:before {
       transform: translate(100%, -50%);
