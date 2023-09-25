@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { sendRequest } from '../../core/config/request';
 import { requestMethods } from '../../core/enums/requestMethods';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 const Admin = () => {
   const navigation = useNavigate();
@@ -18,13 +19,12 @@ const Admin = () => {
       try {
         const response = await sendRequest({
           method: requestMethods.GET,
-          route: '/get-candidates',
+          route: '/get_users',
         });
         setLoading(false);
-        console.log(response);
-        setInitialData(response);
-        setData(response);
-        console.log(response)
+
+        setInitialData(response[0]);
+        setData(response[0]);
       } catch (error) {
         setLoading(false);
         console.log(error);
@@ -34,8 +34,20 @@ const Admin = () => {
     fetchData();
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     setData((prevData) => prevData.filter((item) => item.id !== id));
+    try {
+      const response = await sendRequest({
+        method: requestMethods.POST,
+        route: '/remove-user/' + id,
+        body: editedData
+      });
+
+
+    } catch (error) {
+
+      console.log(error);
+    }
   };
 
   const handleEdit = (id) => {
@@ -44,7 +56,7 @@ const Admin = () => {
     setEditMode(id);
   };
 
-  const saveEdit = () => {
+  const saveEdit = async () => {
     setData((prevData) =>
       prevData.map((item) =>
         item.id === editMode ? { ...item, ...editedData } : item
@@ -52,8 +64,18 @@ const Admin = () => {
     );
     setEditMode(null);
     setEditedData({});
-    console.log(editedData)
+    try {
+      const response = await sendRequest({
+        method: requestMethods.POST,
+        route: '/addOrUpdateUser/' + editedData['id'],
+        body: editedData
+      });
 
+
+    } catch (error) {
+
+      console.log(error);
+    }
   };
 
   const cancelEdit = () => {
@@ -65,18 +87,18 @@ const Admin = () => {
     <>
       <Navbar />
       <div className="mcontainer">
+
+        <i className="fas fa-user" style={{ fontSize: '40px', marginRight: '20px' }}></i>
+
         <h1>Manage Users</h1>
       </div>
       <div className="admin-table">
         <table>
           <thead>
             <tr>
-              <th>Full Name</th>
+              <th>Username</th>
               <th>Email</th>
-              <th>Phone</th>
-              <th>DOB</th>
-              <th>Position</th>
-              <th>Action</th>
+              <th>Password</th>
             </tr>
           </thead>
           <tbody>
@@ -86,13 +108,13 @@ const Admin = () => {
                   {editMode === item.id ? (
                     <input
                       type="text"
-                      value={editedData.full_name || ''}
+                      value={editedData.username || ''}
                       onChange={(e) =>
-                        setEditedData({ ...editedData, full_name: e.target.value })
+                        setEditedData({ ...editedData, username: e.target.value })
                       }
                     />
                   ) : (
-                    item.full_name
+                    item.username
                   )}
                 </td>
                 <td>
@@ -112,41 +134,16 @@ const Admin = () => {
                   {editMode === item.id ? (
                     <input
                       type="text"
-                      value={editedData.phone_number || ''}
+                      value={editedData.password || ''}
                       onChange={(e) =>
-                        setEditedData({ ...editedData, phone_number: e.target.value })
+                        setEditedData({ ...editedData, password: e.target.value })
                       }
                     />
                   ) : (
-                    item.phone_number
+                    item.password
                   )}
                 </td>
-                <td>
-                  {editMode === item.id ? (
-                    <input
-                      type="text"
-                      value={editedData.dob || ''}
-                      onChange={(e) =>
-                        setEditedData({ ...editedData, dob: e.target.value })
-                      }
-                    />
-                  ) : (
-                    item.dob
-                  )}
-                </td>
-                <td>
-                  {editMode === item.id ? (
-                    <input
-                      type="text"
-                      value={editedData.position || ''}
-                      onChange={(e) =>
-                        setEditedData({ ...editedData, position: e.target.value })
-                      }
-                    />
-                  ) : (
-                    item.position
-                  )}
-                </td>
+
                 <td>
                   {editMode === item.id ? (
                     <>
@@ -173,6 +170,7 @@ const Admin = () => {
           </tbody>
         </table>
       </div>
+      <Footer />
     </>
   );
 };
