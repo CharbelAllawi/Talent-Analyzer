@@ -10,8 +10,10 @@
   height: 40vh;
   border: 2px solid black;
   resize: none;
+  padding: 10px 20px;
   overflow-y: scroll;
   position: relative;
+  font-size: 20px;
 }
 
 .result-textarea::before,
@@ -44,9 +46,7 @@
   margin-top: 15rem;
 }
 
-.footcont {
-  padd-bottom: 10%;
-}
+
 
 @keyframes borderAnimation {
   0% {
