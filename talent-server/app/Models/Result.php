@@ -10,7 +10,7 @@ class Result extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['candidate_id', 'result', 'percentage'];
+    protected $fillable = ['candidate_id', 'result', 'candidate_skills'];
 
     public function candidate()
     {
