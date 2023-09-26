@@ -83,6 +83,7 @@ class CandidateController extends Controller
                     'position' => $candidate->position,
                     'image_url' => $candidate->image_url,
                     'result' => $result['result'],
+                    'candidate_skills' => $result['candidate_skills'],
                     'iscompared' => true,
                 ];
             } else {
@@ -95,6 +96,7 @@ class CandidateController extends Controller
                     'position' => $candidate->position,
                     'image_url' => $candidate->image_url,
                     'result' => $result['result'],
+                    'candidate_skills' => $result['candidate_skills'],
                     'iscompared' => false
                 ];
             }
