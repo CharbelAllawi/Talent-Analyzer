@@ -6,17 +6,12 @@ import { requestMethods } from "../../core/enums/requestMethods";
 import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { CandidateCard } from '../../components/Card/Card';
-import Snackbar from '../../components/Snackbar/Snackbar';
 import { useTranslation } from 'react-i18next';
 
 import "./style.css"
 
 function CompareCandidate() {
 
-  const SnackbarType = {
-    success: "success",
-    fail: "fail",
-  };
 
 
   const navigation = useNavigate();
@@ -28,11 +23,12 @@ function CompareCandidate() {
 
   const handleCompareBtn = async () => {
     setLoading(true)
-    let prompt = "i want you analyze the below candidates and return the chosen candidate\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is only 5 lines maximum \nThe JSON object should be in this format {chosen_candidate :   , result:}"
+    let prompt = "i want you analyze the below candidates and return the chosen candidate\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is only 5 lines maximum \nThe JSON object should be in this format {chosen_candidate :   , result: , candidate_skills:}"
     cardData.forEach(data => {
       if (data['iscompared'] == true) {
         prompt += "\ncandidate_name:" + data['full_name']
         prompt += "\nanalyzed result:" + data['result'] + "\n"
+        prompt += "\nanalyzed result:" + data['candidate_skills'] + "\n"
       }
     });
     prompt += '\n(do not return any text or explanation or notes before or after the JSON object)'
@@ -42,9 +38,12 @@ function CompareCandidate() {
         route: '/comparecandidates',
         body: { 'prompt': prompt }
       });
+
       setLoading(false)
       localStorage.setItem("compareresult", response['result']);
       localStorage.setItem("comparechosen", response['chosen_candidate']);
+      localStorage.setItem("compareskills", JSON.stringify(response['candidate_skills']));
+
       navigation('/result/compare')
     } catch (error) {
     }

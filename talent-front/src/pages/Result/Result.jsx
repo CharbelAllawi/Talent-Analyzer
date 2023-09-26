@@ -9,7 +9,7 @@ import { requestMethods } from "../../core/enums/requestMethods";
 import { localStorageAction } from "../../core/config/localstorage";
 import Loading from '../Loading/Loading';
 import { useTranslation } from 'react-i18next';
-import Chart from 'chart.js/auto'; // Import Chart.js
+import Chart from 'chart.js/auto'; 
 
 const Result = ({ content }) => {
   const [t, i18n] = useTranslation("global");
