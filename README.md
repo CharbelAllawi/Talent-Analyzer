@@ -36,7 +36,7 @@
 ### Wireframes
 | Login screen  | Register screen |  Landing screen |
 | ---| ---| ---|
-| ![Sign in Page (1)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/610ef6b1-f777-481b-8189-d71be84d602f)| ![Sign out Page](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/15a53a72-3290-4116-b06b-5c2907486bf0)|![Group 21 (1)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/8243de63-a720-4474-ae68-ffdaaed9a82a)|
+|![image](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/ae00f542-8943-421b-ba89-24aaab7d8ff5) |![Sign out Page](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/15a53a72-3290-4116-b06b-5c2907486bf0)|![Group 21 (1)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/8243de63-a720-4474-ae68-ffdaaed9a82a)|
 
 
 <br><br>
