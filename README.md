@@ -47,9 +47,9 @@
 > Using the wireframes as a guide, we implemented the Talent Analyzer Website with the following features:
 
 ### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![scrnli_9_25_2023_1-09-45 AM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/41b66f91-5120-4614-b1ff-73f005f207e2)|![2023-09-25 - 01-13-26 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/337bb997-5f00-4f05-aeaa-9db12bb43e38)|![2023-09-25 - 01-18-07 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/a098f775-31bb-4cca-9676-7d6b3d4ef436)| ![2023-09-25 - 01-50-02 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/b2f13a9d-f41e-42a4-9b23-8d7b5340211e)|
+| Login screen  | Landing screen | Loading screen |
+| ---| ---| ---|
+| ![scrnli_9_25_2023_1-09-45 AM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/41b66f91-5120-4614-b1ff-73f005f207e2) |![2023-09-25 - 01-18-07 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/a098f775-31bb-4cca-9676-7d6b3d4ef436)| ![2023-09-25 - 01-50-02 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/b2f13a9d-f41e-42a4-9b23-8d7b5340211e)|
 | Candidate Profile | Upload Video | Recruiter Preference | AI Result |
 | | | | |
 | ![2023-09-25 - 02-22-48 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/77247cb6-196b-48b1-bfdf-614d11a9164f)| ![2023-09-25 - 02-24-19 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/c788505d-9614-4112-a2ae-5cbebb336a43)|![2023-09-25 - 02-25-12 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/32144bcf-73b2-4cdb-be35-2b3b10209094)| ![2023-09-25 - 02-26-31 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/a6ed8d21-18d6-4861-be24-d4445b981ba0)
