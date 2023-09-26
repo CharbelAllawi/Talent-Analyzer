@@ -30,7 +30,8 @@ function Options() {
     console.log(item);
   };
   const handlenextbtn = async () => {
-    let text = "i want you analyze the interview while taking into consideration the job position and soft skills required by recruiter\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is only 5 lines maximum and the percentage should be between 1 and 100 based on candidate performance.\nThe JSON object should be in this format {percentage :   , result:}"
+    let text = "i want you analyze the interview while taking into consideration the job position and soft skills required by recruiter ,\nreturn the answer as JSON parsable object (do not return any text or explanation or notes before or after the JSON object)\nalso make sure that the result inside the json object is at a minimum of 10 lines, also in candidate_skills extract his skills and put them there so i can iterate over them and list them in my front-end. The JSON object should be in this format {result: , candidate_skills:},be aware that inside candidate_skills another JSON (but a string) that will contain on skillnames:rates, rate between 1 and 100, example of how candidate_skills should look like: \"{\"react\":\"10\",\"laravel\":\"20\",\"MySQL\":\"30\"}\" \nAgain be extremely careful that what's inside candidate_skills should be of type string\n";
+
     text += "\nJob position is: " + selectedOptions['value'];
     if (selectedOptions2.length !== 0) {
       text += "\nSoft skills are: ";
