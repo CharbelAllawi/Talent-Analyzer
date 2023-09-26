@@ -123,7 +123,7 @@ export function CandidateCard({
       </CardHeader>
 
       <CardBody>
-        <div className="mb-3 flex flex-col items-center justify-betweenn"> {/* Changed flex to flex-col */}
+        <div className="mb-3 flex flex-col items-start justify-between">
           {editing ? (
             <>
               <input
@@ -177,7 +177,7 @@ export function CandidateCard({
         {!editing && (
           <Button
             onClick={handleresultclick}
-            className="bg-custom-gradient fixed bottom-4 left-2 "
+            className="bg-custom-gradient fixed "
             size="lg"
             fullWidth={true}
           >
