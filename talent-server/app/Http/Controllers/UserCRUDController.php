@@ -4,39 +4,44 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserCRUDController extends Controller
 {
     function get_users($id = null)
     {
-        if ($id) {
-            $user = User::find($id);
-            if ($user) {
-                $userData = [
-                    'id' => $user->id,
-                    'username' => $user->username,
-                    'email' => $user->email,
-                    'password' => $user->password,
-                ];
-                return response()->json([$userData]);
+        $user = Auth::user();
+        $user_id = $user->id == 1;
+        if ($user_id) {
+            if ($id) {
+                $user = User::find($id);
+                if ($user) {
+                    $userData = [
+                        'id' => $user->id,
+                        'username' => $user->username,
+                        'email' => $user->email,
+                        'password' => $user->password,
+                    ];
+                    return response()->json([$userData]);
+                } else {
+                    return response()->json(['error' => 'User not found'], 404);
+                }
             } else {
-                return response()->json(['error' => 'User not found'], 404);
-            }
-        } else {
-            $users = User::all();
-            $userList = [];
+                $users = User::all();
+                $userList = [];
 
-            foreach ($users as $user) {
-                $userList[] = [
-                    'id' => $user->id,
-                    'username' => $user->username,
-                    'email' => $user->email,
-                    'password' => $user->password,
-                ];
-            }
+                foreach ($users as $user) {
+                    $userList[] = [
+                        'id' => $user->id,
+                        'username' => $user->username,
+                        'email' => $user->email,
+                        'password' => $user->password,
+                    ];
+                }
 
-            return response()->json([$userList]);
+                return response()->json([$userList]);
+            }
         }
     }
     public function removeuser($id)
