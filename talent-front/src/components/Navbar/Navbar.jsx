@@ -114,7 +114,7 @@ function Navbar(selecteditem) {
       {renderMobileMenu()}
       {isMobile ? null : (
         <ul className="flex flex-col md:flex-row  justify-between text-white md:flex text-lg font-bold">
-
+          
           {token != "" ? (
             <>
               <li className={`md:mr-20 mb-2 md:mb-0 ${isMobile ? 'mr-20' : ''}`}>

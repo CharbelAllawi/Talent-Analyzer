@@ -5,5 +5,7 @@
 
 .fixed {
   width: 350px;
-  position: absolute;
+  position: relative;
+  margin-left: -15px;
+  top: 10px;
 }
