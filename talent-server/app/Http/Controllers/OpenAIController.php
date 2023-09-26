@@ -23,7 +23,7 @@ class OpenAIController extends Controller
 
     $resultData = json_decode($jsonresult['choices'][0]['text'], true);
 
-    while (!isset($resultData['result'])) {
+    while (!isset($resultData['result']) && !isset($resultData['candidate_skills'])) {
       $jsonresult = $client->completions()->create([
         'model' => 'gpt-3.5-turbo-instruct',
         'prompt' => $existingContent,
@@ -31,11 +31,10 @@ class OpenAIController extends Controller
       ]);
       $resultData = json_decode($jsonresult['choices'][0]['text'], true);
     }
-
     $result = new Result([
       'candidate_id' => $request->id,
       'result' => $resultData['result'],
-      'percentage' => $resultData['percentage'],
+      'candidate_skills' => $resultData['candidate_skills'],
     ]);
 
     $result->save();
