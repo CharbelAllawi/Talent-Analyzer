@@ -46,16 +46,21 @@
 
 > Using the wireframes as a guide, we implemented the Talent Analyzer Website with the following features:
 
-### User Screens (Mobile)
-| Login screen  | Landing screen | Loading screen |
-| ---| ---| ---|
-| ![image](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/442072b5-0ede-4a21-be44-a9f88a84ffa9) |![2023-09-25 - 01-18-07 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/a098f775-31bb-4cca-9676-7d6b3d4ef436)| ![2023-09-25 - 01-50-02 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/b2f13a9d-f41e-42a4-9b23-8d7b5340211e)|
+### Website Screens
+| Login screen  | Landing screen | Loading screen |  Multi-Language screen | 
+| ---| ---| ---| ---|
+|![scrnli_9_26_2023_10-28-28 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/fde7e938-5171-41a5-8174-b30957b59ea9)|![scrnli_9_27_2023_12-15-00 AM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/5df811d9-e34a-4b48-9a52-305d034f6e79)|![scrnli_9_26_2023_10-33-54 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/7a6eab61-5966-40a1-b3d2-8412a58704f2)|![scrnli_9_27_2023_12-24-35 AM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/25afe2c5-80e0-4ba0-8c32-f498a206e15e)
+
 | Candidate Profile | Upload Video | Recruiter Preference | AI Result |
-| | | | |
-| ![2023-09-25 - 02-22-48 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/77247cb6-196b-48b1-bfdf-614d11a9164f)| ![2023-09-25 - 02-24-19 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/c788505d-9614-4112-a2ae-5cbebb336a43)|![2023-09-25 - 02-25-12 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/32144bcf-73b2-4cdb-be35-2b3b10209094)| ![2023-09-25 - 02-26-31 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/a6ed8d21-18d6-4861-be24-d4445b981ba0)
+| ---| ---| ---| ---|
+|![scrnli_9_26_2023_10-37-58 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/18b83959-8650-4ba6-9fe8-3470d5e8e8e3)|![scrnli_9_26_2023_10-41-39 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/d870d44a-a203-4867-8beb-5324c5437fe5)|![scrnli_9_26_2023_10-45-25 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/c1a883d8-56c5-41af-821c-6c994618d9e5)|![scrnli_9_27_2023_12-00-55 AM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/60a3482f-0d7a-4551-9da8-4d4b40f93c66)
+
 | My Candidates| Compare | Compare Result | Admin CRUD |
-| | | | |
-| ![2023-09-25 - 03-23-57 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/e0ae5bdf-48df-4407-8717-1212339bb636)| ![2023-09-25 - 02-30-47 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/150dda71-f681-4176-bb30-8acc9cf63094)|![2023-09-25 - 02-34-31 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/fd58beff-5ffc-403d-96e1-2a8ba3eb8275)| ![2023-09-25 - 02-36-22 - React App](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/ab86e0c3-0a7d-4a66-a029-24779a0de2e0)
+| ---| ---| ---| ---|
+|![scrnli_9_26_2023_11-04-22 PM (1)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/9774d373-d8fc-4dd1-8d81-13f063ae27e0)|![scrnli_9_26_2023_11-10-43 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/02930642-bc48-4340-afaf-3038caf7fa39)|![scrnli_9_26_2023_11-38-23 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/0d6f860f-4b4c-49d0-97e8-adcf87bb974d)|![scrnli_9_26_2023_11-50-10 PM](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/94ee3df6-c9b0-4883-ab6c-14ce87d94a1d)
+
+
+
 
 
 
