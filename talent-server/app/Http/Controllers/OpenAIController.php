@@ -15,22 +15,32 @@ class OpenAIController extends Controller
     $filePath = storage_path('app/public/candidatestext/' . $request->id . '.txt');
     $existingContent = file_get_contents($filePath);
 
-    $jsonresult = $client->completions()->create([
-      'model' => 'gpt-3.5-turbo-instruct',
-      'prompt' => $existingContent,
-      'max_tokens' => 2048,
-    ]);
+    $maxRetries = 100;
+    $retryCount = 0;
 
-    $resultData = json_decode($jsonresult['choices'][0]['text'], true);
-
-    while (!isset($resultData['result']) && !isset($resultData['candidate_skills'])) {
+    while ($retryCount < $maxRetries) {
       $jsonresult = $client->completions()->create([
         'model' => 'gpt-3.5-turbo-instruct',
         'prompt' => $existingContent,
         'max_tokens' => 2048,
       ]);
-      $resultData = json_decode($jsonresult['choices'][0]['text'], true);
+
+      $response = $jsonresult['choices'][0]['text'];
+      $resultData = json_decode($response, true);
+
+      if (is_array($resultData) && isset($resultData['result']) && isset($resultData['candidate_skills'])) {
+        break;
+      } else {
+        error_log("OpenAI API response did not contain expected data: " . $response);
+        sleep(2);
+        $retryCount++;
+      }
     }
+
+    if ($retryCount === $maxRetries) {
+      return "Max retries reached, unable to get a valid response.";
+    }
+
     $result = new Result([
       'candidate_id' => $request->id,
       'result' => $resultData['result'],
