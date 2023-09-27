@@ -28,17 +28,20 @@ class OpenAIController extends Controller
       $response = $jsonresult['choices'][0]['text'];
       $resultData = json_decode($response, true);
 
-      if (is_array($resultData) && isset($resultData['result']) && isset($resultData['candidate_skills'])) {
-        break;
+      if (json_last_error() === JSON_ERROR_NONE) {
+        if (is_array($resultData) && isset($resultData['result']) && isset($resultData['candidate_skills'])) {
+          break;
+        } else {
+          error_log("OpenAI API response is missing expected keys: " . $response);
+          sleep(2);
+          $retryCount++;
+        }
       } else {
-        error_log("OpenAI API response did not contain expected data: " . $response);
+        error_log("Error decoding OpenAI API response as JSON: " . json_last_error_msg());
         sleep(2);
+
         $retryCount++;
       }
-    }
-
-    if ($retryCount === $maxRetries) {
-      return "Max retries reached, unable to get a valid response.";
     }
 
     $result = new Result([
