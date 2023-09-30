@@ -60,9 +60,15 @@
 | ---| ---| ---| ---|
 |<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/9774d373-d8fc-4dd1-8d81-13f063ae27e0" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/02930642-bc48-4340-afaf-3038caf7fa39" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/0d6f860f-4b4c-49d0-97e8-adcf87bb974d" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/94ee3df6-c9b0-4883-ab6c-14ce87d94a1d" width="250" height="150">|
 
+<br><br>
 
+<!-- Tech stack -->
 
+###  Performance
 
+![image](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/3bcd2e7f-e68d-40d4-8b2b-90a40d3c50a7)
+
+In this project, I've achieved lightning-fast database query performance using Postman. I was able to retrieve 1000 candidate records from my database in an astonishingly quick 965 milliseconds. This remarkable speed not only enhances user experience but also demonstrates the efficiency and optimization of my database queries.
 
 <br><br>
 
