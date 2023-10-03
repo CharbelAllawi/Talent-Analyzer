@@ -2,7 +2,6 @@
 
 
 
-
 ![title1](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/cc25e0db-4175-4655-b3ff-1e4d4f50e32e)
 
 <br><br>
@@ -41,7 +40,7 @@
 <br><br>
 
 <!-- Implementation -->
-![title4](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/9378b8ed-1fe3-450d-b028-8d650923fb00)
+![Frame (3)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/807aff20-a61d-4192-8072-de2c4cd70ab5)
 
 > Using the wireframes as a guide, we implemented the Talent Analyzer Website with the following features:
 
