@@ -3,7 +3,6 @@
 
 
 
-
 ![title1](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/cc25e0db-4175-4655-b3ff-1e4d4f50e32e)
 
 <br><br>
@@ -63,8 +62,9 @@
 <br><br>
 
 <!-- Tech stack -->
+![Frame](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/80212da1-a91f-4761-ad5a-44943166b025)
 
-###  Performance
+
 
 ![image](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/3bcd2e7f-e68d-40d4-8b2b-90a40d3c50a7)
 
@@ -72,6 +72,18 @@ In this project, I've achieved lightning-fast database query performance using P
 
 <br><br>
 
+![Frame (2)](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/f324021e-c0b4-41df-aba5-c3a184baba6a)
+<br><br>
+Candidate Prediction example: 
+<br><br>
+```sh 
+  {
+  candidate_id: '1',
+  result: 'The software engineer candidate exhibits a strong blend of technical expertise and problem-solving skills. They have a robust background in software development, evident from their extensive experience with multiple programming languages, including Java, Python, and JavaScript. Their proficiency in these languages, combined with their familiarity with various development frameworks and tools, positions them as a versatile engineer capable of adapting to diverse project requirements.Furthermore, the candidate demonstrates a deep understanding of software architecture and design principles, showcasing their ability to craft efficient and scalable solutions. Their experience in working on cross-functional teams and collaborating with other developers, designers, and stakeholders highlights their excellent interpersonal and communication skills, crucial for successful project execution. The candidate's commitment to continuous learning and professional growth is evident through their participation in online courses, attending tech conferences, and staying updated with industry trends. This proactive approach to self-improvement aligns well with the ever-evolving nature of the software engineering field, ensuring their ability to remain adaptable and innovative in a rapidly changing environment.Overall, the software engineer candidate presents a compelling combination of technical prowess, collaborative aptitude, and a dedication to personal and professional development, making them a strong contender for any software engineering role.",
+  candidate_skills:{Python:30,Full-Stack Development:25,Security:40}
+}
+```
+<br><br>
 <!-- Tech stack -->
 ![title5](https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/3e53eac4-8846-41f2-902b-c7f5c57b7844)
 ###  Talent Analyzer is built using the following technologies:
