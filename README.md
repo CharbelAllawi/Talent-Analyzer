@@ -77,14 +77,17 @@ As a Recruiter:
 | Login screen  | Landing screen | Loading screen 
 | ---| ---| ---|
 |<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/fde7e938-5171-41a5-8174-b30957b59ea9" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/5df811d9-e34a-4b48-9a52-305d034f6e79" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/7a6eab61-5966-40a1-b3d2-8412a58704f2" width="250" height="150">
-| Candidate Profile | Upload Video | Recruiter Preference |
+
+| Candidate Profile | Upload Video | Recruiter Preference
 | ---| ---| ---|
 |<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/18b83959-8650-4ba6-9fe8-3470d5e8e8e3" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/d870d44a-a203-4867-8beb-5324c5437fe5" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/c1a883d8-56c5-41af-821c-6c994618d9e5" width="250" height="150">
 
 | My Candidates| Compare | Compare Result | 
 | ---| ---| ---|
 |<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/9774d373-d8fc-4dd1-8d81-13f063ae27e0" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/02930642-bc48-4340-afaf-3038caf7fa39" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/0d6f860f-4b4c-49d0-97e8-adcf87bb974d" width="250" height="150">
-|  Multi-Language screen |  AI Result |Admin CRUD |
+
+| Multi-Language screen |  AI Result |Admin CRUD |
+| ---| ---| ---|
 |<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/25afe2c5-80e0-4ba0-8c32-f498a206e15e" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/60a3482f-0d7a-4551-9da8-4d4b40f93c66" width="250" height="150">|<img src="https://github.com/CharbelAllawi/Talent-Analyzer/assets/108435865/94ee3df6-c9b0-4883-ab6c-14ce87d94a1d" width="250" height="150">
 
 <br><br>
